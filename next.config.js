@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true, // Tối ưu routing cho file tĩnh (Của bạn)
-  
-  // BẮT BUỘC: Phải có 2 dòng này thì web mới nhận được CSS/JS trên GitHub Pages
-  basePath: '/E-commerce', 
-  assetPrefix: '/E-commerce/',
+  output: 'export', // Vẫn giữ cái này để chứng minh web tĩnh 100%
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
