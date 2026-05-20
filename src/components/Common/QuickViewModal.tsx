@@ -2,42 +2,40 @@
 import React, { useEffect, useState } from "react";
 
 import { useModalContext } from "@/app/context/QuickViewModalContext";
-import { AppDispatch, useAppSelector } from "@/redux/store";
-import { addItemToCart } from "@/redux/features/cart-slice";
-import { useDispatch } from "react-redux";
+import { useCartStore, useQuickViewStore } from "@/store";
 import Image from "next/image";
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
-import { resetQuickView } from "@/redux/features/quickView-slice";
-import { updateproductDetails } from "@/redux/features/product-details";
+import toast from "react-hot-toast";
 
 const QuickViewModal = () => {
   const { isModalOpen, closeModal } = useModalContext();
   const { openPreviewModal } = usePreviewSlider();
   const [quantity, setQuantity] = useState(1);
 
-  const dispatch = useDispatch<AppDispatch>();
-
-  // get the product data
-  const product = useAppSelector((state) => state.quickViewReducer.value);
+  // Get product from Zustand store
+  const product = useQuickViewStore((state) => state.product);
+  const { addItem } = useCartStore();
 
   const [activePreview, setActivePreview] = useState(0);
 
   // preview modal
   const handlePreviewSlider = () => {
-    dispatch(updateproductDetails(product));
-
     openPreviewModal();
   };
 
   // add to cart
   const handleAddToCart = () => {
-    dispatch(
-      addItemToCart({
-        ...product,
-        quantity,
-      })
-    );
+    if (!product) return;
+    
+    addItem({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+      quantity,
+    });
 
+    toast.success("Added to cart!");
     closeModal();
   };
 
@@ -93,22 +91,23 @@ const QuickViewModal = () => {
             <div className="max-w-[526px] w-full">
               <div className="flex gap-5">
                 <div className="flex flex-col gap-5">
-                  {product.imgs.thumbnails?.map((img, key) => (
+                  {/* Single image preview for now */}
+                  {product && (
                     <button
-                      onClick={() => setActivePreview(key)}
-                      key={key}
-                      className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-blue ${activePreview === key && "border-2 border-blue"
-                        }`}
+                      onClick={() => setActivePreview(0)}
+                      className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-blue ${
+                        activePreview === 0 && "border-2 border-blue"
+                      }`}
                     >
                       <Image
-                        src={img || ""}
+                        src={product.image}
                         alt="thumbnail"
                         width={61}
                         height={61}
                         className="aspect-square"
                       />
                     </button>
-                  ))}
+                  )}
                 </div>
 
                 <div className="relative z-1 overflow-hidden flex items-center justify-center w-full sm:min-h-[508px] bg-gray-1 rounded-lg border border-gray-3">
@@ -135,9 +134,9 @@ const QuickViewModal = () => {
                       </svg>
                     </button>
 
-                    {product?.imgs?.previews?.[activePreview] && (
+                    {product && (
                       <Image
-                        src={product.imgs.previews[activePreview]}
+                        src={product.image}
                         alt="products-details"
                         width={400}
                         height={400}
@@ -154,7 +153,7 @@ const QuickViewModal = () => {
               </span>
 
               <h3 className="font-semibold text-xl xl:text-heading-5 text-dark mb-4">
-                {product.title}
+                {product?.title || "Product"}
               </h3>
 
               <div className="flex flex-wrap items-center gap-5 mb-6">
@@ -315,10 +314,7 @@ const QuickViewModal = () => {
 
                   <span className="flex items-center gap-2">
                     <span className="font-semibold text-dark text-xl xl:text-heading-4">
-                      ${product.discountedPrice}
-                    </span>
-                    <span className="font-medium text-dark-4 text-lg xl:text-2xl line-through">
-                      ${product.price}
+                      ${product?.price || 0}
                     </span>
                   </span>
                 </div>

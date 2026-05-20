@@ -4,7 +4,10 @@ export type Product = {
   price: number;
   discountedPrice: number;
   id: number;
-  imgs?: {
+  description?: string;
+  rating?: number;
+  category?: string;
+  imgs: {
     thumbnails: string[];
     previews: string[];
   };

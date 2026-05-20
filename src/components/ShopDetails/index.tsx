@@ -5,7 +5,7 @@ import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
 import RecentlyViewdItems from "./RecentlyViewd";
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
-import { useAppSelector } from "@/redux/store";
+import { useQuickViewStore } from "@/store";
 
 const ShopDetails = () => {
   const [activeColor, setActiveColor] = useState("blue");
@@ -76,14 +76,16 @@ const ShopDetails = () => {
   const colors = ["red", "blue", "orange", "pink", "purple"];
 
   const alreadyExist = localStorage.getItem("productDetails");
-  const productFromStorage = useAppSelector(
-    (state) => state.productDetailsReducer.value
+  const productFromStore = useQuickViewStore(
+    (state) => state.product
   );
 
-  const product = alreadyExist ? JSON.parse(alreadyExist) : productFromStorage;
+  const product = alreadyExist ? JSON.parse(alreadyExist) : productFromStore;
 
   useEffect(() => {
-    localStorage.setItem("productDetails", JSON.stringify(product));
+    if (product) {
+      localStorage.setItem("productDetails", JSON.stringify(product));
+    }
   }, [product]);
 
   // pass the product here when you get the real data.

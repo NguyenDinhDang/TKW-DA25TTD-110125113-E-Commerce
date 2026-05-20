@@ -1,11 +1,8 @@
-import { selectTotalPrice } from "@/redux/features/cart-slice";
-import { useAppSelector } from "@/redux/store";
+import { useCartStore } from "@/store";
 import React from "react";
-import { useSelector } from "react-redux";
 
 const OrderSummary = () => {
-  const cartItems = useAppSelector((state) => state.cartReducer.items);
-  const totalPrice = useSelector(selectTotalPrice);
+  const { items, getTotal } = useCartStore();
 
   return (
     <div className="lg:max-w-[455px] w-full">
@@ -27,14 +24,14 @@ const OrderSummary = () => {
           </div>
 
           {/* <!-- product item --> */}
-          {cartItems.map((item, key) => (
+          {items.map((item, key) => (
             <div key={key} className="flex items-center justify-between py-5 border-b border-gray-3">
               <div>
                 <p className="text-dark">{item.title}</p>
               </div>
               <div>
                 <p className="text-dark text-right">
-                  ${item.discountedPrice * item.quantity}
+                  ${item.price * item.quantity}
                 </p>
               </div>
             </div>
@@ -47,7 +44,7 @@ const OrderSummary = () => {
             </div>
             <div>
               <p className="font-medium text-lg text-dark text-right">
-                ${totalPrice}
+                ${getTotal().toFixed(2)}
               </p>
             </div>
           </div>

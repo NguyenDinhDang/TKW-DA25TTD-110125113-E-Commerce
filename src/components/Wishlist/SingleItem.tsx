@@ -1,26 +1,27 @@
 import React from "react";
-import { AppDispatch } from "@/redux/store";
-import { useDispatch } from "react-redux";
-
-import { removeItemFromWishlist } from "@/redux/features/wishlist-slice";
-import { addItemToCart } from "@/redux/features/cart-slice";
+import { useCartStore, useWishlistStore } from "@/store";
 
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 const SingleItem = ({ item }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const { removeItem } = useWishlistStore();
+  const { addItem } = useCartStore();
 
   const handleRemoveFromWishlist = () => {
-    dispatch(removeItemFromWishlist(item.id));
+    removeItem(item.id);
+    toast.success("Removed from wishlist!");
   };
 
   const handleAddToCart = () => {
-    dispatch(
-      addItemToCart({
-        ...item,
-        quantity: 1,
-      })
-    );
+    addItem({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      image: item.image,
+      quantity: 1,
+    });
+    toast.success("Added to cart!");
   };
 
   return (
