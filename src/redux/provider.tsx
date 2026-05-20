@@ -1,9 +1,18 @@
 "use client";
 
-import { store } from "./store";
-import { Provider } from "react-redux";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export function ReduxProvider({ children }: { children: React.ReactNode }) {
-  return <Provider store={store}>{children}</Provider>;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch by only rendering after mount
+  if (!mounted) {
+    return <>{children}</>;
+  }
+
+  return <>{children}</>;
 }
