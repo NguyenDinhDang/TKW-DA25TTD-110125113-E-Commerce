@@ -2,6 +2,7 @@ import React from "react";
 import { useCartStore } from "@/store";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { formatVND } from "@/utils/currency";
 
 const SingleItem = ({ item }) => {
   const { removeItem } = useCartStore();
@@ -22,7 +23,7 @@ const SingleItem = ({ item }) => {
           <h3 className="font-medium text-dark mb-1 ease-out duration-200 hover:text-blue">
             <a href="#"> {item.title} </a>
           </h3>
-          <p className="text-custom-sm">Price: ${item.price}</p>
+          <p className="text-custom-sm">Giá: {formatVND(item.price)}</p>
         </div>
       </div>
 

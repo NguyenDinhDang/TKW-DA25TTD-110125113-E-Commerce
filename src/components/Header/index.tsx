@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CustomSelect from "./CustomSelect";
@@ -7,6 +7,7 @@ import Dropdown from "./Dropdown";
 import { useCartStore } from "@/store";
 import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
 import Image from "next/image";
+import { formatVND } from "@/utils/currency";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -34,11 +35,11 @@ const Header = () => {
   });
 
   const options = [
-    { label: "All Categories", value: "0" },
+    { label: "Tất cả danh mục", value: "0" },
     { label: "Desktop", value: "1" },
     { label: "Laptop", value: "2" },
     { label: "Monitor", value: "3" },
-    { label: "Phone", value: "4" },
+    { label: "Điện thoại", value: "4" },
     { label: "Watch", value: "5" },
     { label: "Mouse", value: "6" },
     { label: "Tablet", value: "7" },
@@ -82,14 +83,14 @@ const Header = () => {
                       type="search"
                       name="search"
                       id="search"
-                      placeholder="I am shopping for..."
+                      placeholder="Bạn muốn tìm gì?"
                       autoComplete="off"
                       className="custom-search w-full rounded-r-[5px] bg-gray-1 !border-l-0 border border-gray-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200"
                     />
 
                     <button
                       id="search-btn"
-                      aria-label="Search"
+                      aria-label="Tìm kiếm"
                       className="flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 ease-in duration-200 hover:text-blue"
                     >
                       <svg
@@ -142,10 +143,10 @@ const Header = () => {
 
               <div>
                 <span className="block text-2xs text-dark-4 uppercase">
-                  24/7 SUPPORT
+                  Hỗ trợ khách hàng 24/7
                 </span>
                 <p className="font-medium text-custom-sm text-dark">
-                  (+965) 7492-3477
+                  (+84) 3638 14613
                 </p>
               </div>
             </div>
@@ -179,10 +180,10 @@ const Header = () => {
 
                   <div>
                     <span className="block text-2xs text-dark-4 uppercase">
-                      account
+                      Tài khoản
                     </span>
                     <p className="font-medium text-custom-sm text-dark">
-                      Sign In
+                      Đăng nhập
                     </p>
                   </div>
                 </Link>
@@ -230,10 +231,10 @@ const Header = () => {
 
                   <div>
                     <span className="block text-2xs text-dark-4 uppercase">
-                      cart
+                      Giỏ hàng
                     </span>
                     <p className="font-medium text-custom-sm text-dark">
-                      ${getTotal().toFixed(2)}
+                      {formatVND(getTotal())}
                     </p>
                   </div>
                 </button>
@@ -353,7 +354,7 @@ const Header = () => {
                         fill=""
                       />
                     </svg>
-                    Recently Viewed
+                    Đã xem gần đây
                   </a>
                 </li>
 
@@ -375,7 +376,7 @@ const Header = () => {
                         fill=""
                       />
                     </svg>
-                    Wishlist
+                    Danh sách yêu thích
                   </Link>
                 </li>
               </ul>

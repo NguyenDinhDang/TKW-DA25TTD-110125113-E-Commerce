@@ -6,6 +6,7 @@ import { useCartStore, useQuickViewStore, useWishlistStore } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { formatVND } from "@/utils/currency";
 
 const SingleItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
@@ -36,7 +37,7 @@ const SingleItem = ({ item }: { item: Product }) => {
       image: item.imgs.previews[0],
       quantity: 1,
     });
-    toast.success("Added to cart!");
+    toast.success("Đã thêm vào giỏ hàng!");
   };
 
   const handleItemToWishList = () => {
@@ -47,7 +48,7 @@ const SingleItem = ({ item }: { item: Product }) => {
       image: item.imgs.previews[0],
       category: item.category,
     });
-    toast.success("Added to wishlist!");
+    toast.success("Đã thêm vào yêu thích!");
   };
 
   return (
@@ -96,8 +97,8 @@ const SingleItem = ({ item }: { item: Product }) => {
           </h3>
 
           <span className="flex items-center justify-center gap-2 font-medium text-lg">
-            <span className="text-dark">${item.discountedPrice}</span>
-            <span className="text-dark-4 line-through">${item.price}</span>
+            <span className="text-dark">{formatVND(item.discountedPrice)}</span>
+            <span className="text-dark-4 line-through">{formatVND(item.price)}</span>
           </span>
         </div>
 

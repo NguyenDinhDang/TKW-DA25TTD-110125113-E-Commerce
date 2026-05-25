@@ -6,6 +6,7 @@ import Newsletter from "../Common/Newsletter";
 import RecentlyViewdItems from "./RecentlyViewd";
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useQuickViewStore } from "@/store";
+import { formatVND } from "@/utils/currency";
 
 const ShopDetails = () => {
   const [activeColor, setActiveColor] = useState("blue");
@@ -95,10 +96,10 @@ const ShopDetails = () => {
 
   return (
     <>
-      <Breadcrumb title={"Shop Details"} pages={["shop details"]} />
+      <Breadcrumb title={"Chi tiết sản phẩm"} pages={["chi tiết sản phẩm"]} />
 
       {product.title === "" ? (
-        "Please add product"
+        "Vui lòng chọn sản phẩm"
       ) : (
         <>
           <section className="overflow-hidden relative pb-20 pt-5 lg:pt-20 xl:pt-28">
@@ -170,7 +171,7 @@ const ShopDetails = () => {
                     </h2>
 
                     <div className="inline-flex font-medium text-custom-sm text-white bg-blue rounded py-0.5 px-2.5">
-                      30% OFF
+                      GIẢM 30%
                     </div>
                   </div>
 
@@ -284,7 +285,7 @@ const ShopDetails = () => {
                         </svg>
                       </div>
 
-                      <span> (5 customer reviews) </span>
+                      <span> (5 đánh giá) </span>
                     </div>
 
                     <div className="flex items-center gap-1.5">
@@ -312,17 +313,17 @@ const ShopDetails = () => {
                         </defs>
                       </svg>
 
-                      <span className="text-green"> In Stock </span>
+                      <span className="text-green"> Còn hàng </span>
                     </div>
                   </div>
 
                   <h3 className="font-medium text-custom-1 mb-4.5">
                     <span className="text-sm sm:text-base text-dark">
-                      Price: ${product.price}
+                      Giá: {formatVND(product.price)}
                     </span>
                     <span className="line-through">
                       {" "}
-                      ${product.discountedPrice}{" "}
+                      {formatVND(product.discountedPrice)}{" "}
                     </span>
                   </h3>
 
@@ -346,7 +347,7 @@ const ShopDetails = () => {
                           fill="#3C50E0"
                         />
                       </svg>
-                      Free delivery available
+                      Có hỗ trợ giao hàng miễn phí
                     </li>
 
                     <li className="flex items-center gap-2.5">

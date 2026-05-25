@@ -2,6 +2,7 @@
 
 import { useCartStore } from '@/store';
 import toast from 'react-hot-toast';
+import { formatVND } from "@/utils/currency";
 
 interface SampleProductProps {
   id: string;
@@ -38,7 +39,7 @@ export function SampleProductCard({ id, title, price, image }: SampleProductProp
       />
       
       <h3 className="font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm mb-4">${price.toFixed(2)}</p>
+      <p className="text-gray-600 text-sm mb-4">{formatVND(price)}</p>
       
       <button
         onClick={handleAddToCart}

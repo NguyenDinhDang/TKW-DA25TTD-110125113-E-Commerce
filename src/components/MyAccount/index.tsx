@@ -39,9 +39,9 @@ const MyAccount = () => {
 
                   <div>
                     <p className="font-medium text-dark mb-0.5">
-                      James Septimus
+                      Đặng Đình Nguyên
                     </p>
-                    <p className="text-custom-xs">Member Since Sep 2020</p>
+                    <p className="text-custom-xs">Thành viên từ tháng 6 năm 2026</p>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Dashboard
+                      Trang chủ
                     </button>
                     <button
                       onClick={() => setActiveTab("orders")}
@@ -125,7 +125,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Orders
+                      Đơn hàng
                     </button>
 
                     <button
@@ -153,7 +153,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Downloads
+                      Tải xuống
                     </button>
 
                     <button
@@ -183,7 +183,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Addresses
+                      Địa chỉ
                     </button>
 
                     <button
@@ -215,7 +215,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Account Details
+                      Thông tin tài khoản
                     </button>
 
                     <button
@@ -243,7 +243,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Logout
+                      Đăng xuất
                     </button>
                   </div>
                 </div>
@@ -261,20 +261,18 @@ const MyAccount = () => {
               }`}
             >
               <p className="text-dark">
-                Hello Annie (not Annie?
+                Hello Nguyên (Không phải Nguyên?
                 <a
                   href="#"
                   className="text-red ease-out duration-200 hover:underline"
                 >
-                  Log Out
+                  Đăng xuất
                 </a>
                 )
               </p>
 
               <p className="text-custom-sm mt-4">
-                From your account dashboard you can view your recent orders,
-                manage your shipping and billing addresses, and edit your
-                password and account details.
+                Từ trang tổng quan tài khoản của bạn, bạn có thể xem nhanh các đơn đặt hàng gần đây, quản lý địa chỉ giao hàng và thanh toán của mình, và chỉnh sửa mật khẩu và chi tiết tài khoản của bạn.
               </p>
             </div>
             {/* <!-- dashboard tab content end -->
@@ -295,7 +293,7 @@ const MyAccount = () => {
                 activeTab === "downloads" ? "block" : "hidden"
               }`}
             >
-              <p>You don&apos;t have any download</p>
+              <p>Bạn không có tải xuống gì cả</p>
             </div>
             {/* <!-- downloads tab content end -->
 
@@ -308,7 +306,7 @@ const MyAccount = () => {
               <div className="xl:max-w-[370px] w-full bg-white shadow-1 rounded-xl">
                 <div className="flex items-center justify-between py-5 px-4 sm:pl-7.5 sm:pr-6 border-b border-gray-3">
                   <p className="font-medium text-xl text-dark">
-                    Shipping Address
+                    Địa chỉ giao hàng
                   </p>
 
                   <button
@@ -357,7 +355,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Name: James Septimus
+                      Name: Đặng Đình Nguyên
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
@@ -376,7 +374,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Email: jamse@example.com
+                      Email: Đặng Đình Nguyên 
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
@@ -405,7 +403,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Phone: 1234 567890
+                      Phone: 110125113
                     </p>
 
                     <p className="flex gap-2.5 text-custom-sm">
@@ -431,7 +429,7 @@ const MyAccount = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      Address: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
+                      Địa chỉ: 123 Đường ABC, Phường XYZ, Quận 1, TP. HCM
                     </p>
                   </div>
                 </div>
@@ -440,7 +438,7 @@ const MyAccount = () => {
               <div className="xl:max-w-[370px] w-full bg-white shadow-1 rounded-xl">
                 <div className="flex items-center justify-between py-5 px-4 sm:pl-7.5 sm:pr-6 border-b border-gray-3">
                   <p className="font-medium text-xl text-dark">
-                    Billing Address
+                    Địa chỉ thanh toán
                   </p>
 
                   <button
@@ -489,7 +487,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Name: James Septimus
+                      Tên: Đặng Đình Nguyên
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
@@ -508,7 +506,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Email: jamse@example.com
+                      Đặng Đình Nguyên
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
@@ -582,7 +580,7 @@ const MyAccount = () => {
                   <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
                     <div className="w-full">
                       <label htmlFor="firstName" className="block mb-2.5">
-                        First Name <span className="text-red">*</span>
+                        Họ <span className="text-red">*</span>
                       </label>
 
                       <input
@@ -597,7 +595,7 @@ const MyAccount = () => {
 
                     <div className="w-full">
                       <label htmlFor="lastName" className="block mb-2.5">
-                        Last Name <span className="text-red">*</span>
+                        Tên <span className="text-red">*</span>
                       </label>
 
                       <input
@@ -613,14 +611,14 @@ const MyAccount = () => {
 
                   <div className="mb-5">
                     <label htmlFor="countryName" className="block mb-2.5">
-                      Country/ Region <span className="text-red">*</span>
+                      Quốc gia/ Khu vực <span className="text-red">*</span>
                     </label>
 
                     <div className="relative">
                       <select className="w-full bg-gray-1 rounded-md border border-gray-3 text-dark-4 py-3 pl-5 pr-9 duration-200 appearance-none outline-none focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20">
-                        <option value="0">Australia</option>
-                        <option value="1">America</option>
-                        <option value="2">England</option>
+                        <option value="0">Việt Nam</option>
+                        <option value="1">Nhật Bản</option>
+                        <option value="2">Thanh Hoá</option>
                       </select>
 
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 text-dark-4">
@@ -647,23 +645,22 @@ const MyAccount = () => {
                     type="submit"
                     className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                   >
-                    Save Changes
+                    Lưu thay đổi
                   </button>
                 </div>
 
                 <p className="text-custom-sm mt-5 mb-9">
-                  This will be how your name will be displayed in the account
-                  section and in reviews
+                  Đây là thông tin tài khoản của bạn, bạn có thể thay đổi mật khẩu tại đây. Nếu bạn muốn thay đổi địa chỉ, vui lòng chuyển đến tab địa chỉ và cập nhật địa chỉ của bạn.
                 </p>
 
                 <p className="font-medium text-xl sm:text-2xl text-dark mb-7">
-                  Password Change
+                  Mật khẩu thay đổi
                 </p>
 
                 <div className="bg-white shadow-1 rounded-xl p-4 sm:p-8.5">
                   <div className="mb-5">
                     <label htmlFor="oldPassword" className="block mb-2.5">
-                      Old Password
+                      Mât khẩu cũ
                     </label>
 
                     <input

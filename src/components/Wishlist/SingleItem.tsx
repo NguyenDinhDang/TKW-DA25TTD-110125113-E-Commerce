@@ -3,6 +3,7 @@ import { useCartStore, useWishlistStore } from "@/store";
 
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { formatVND } from "@/utils/currency";
 
 const SingleItem = ({ item }) => {
   const { removeItem } = useWishlistStore();
@@ -10,7 +11,7 @@ const SingleItem = ({ item }) => {
 
   const handleRemoveFromWishlist = () => {
     removeItem(item.id);
-    toast.success("Removed from wishlist!");
+    toast.success("Đã xóa khỏi yêu thích!");
   };
 
   const handleAddToCart = () => {
@@ -21,7 +22,7 @@ const SingleItem = ({ item }) => {
       image: item.image,
       quantity: 1,
     });
-    toast.success("Added to cart!");
+    toast.success("Đã thêm vào giỏ hàng!");
   };
 
   return (
@@ -71,7 +72,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[205px]">
-        <p className="text-dark">${item.discountedPrice}</p>
+        <p className="text-dark">{formatVND(item.discountedPrice)}</p>
       </div>
 
       <div className="min-w-[265px]">
@@ -99,7 +100,7 @@ const SingleItem = ({ item }) => {
             />
           </svg>
 
-          <span className="text-red"> Out of Stock </span>
+          <span className="text-red"> Hết hàng </span>
         </div>
       </div>
 
@@ -108,7 +109,7 @@ const SingleItem = ({ item }) => {
           onClick={() => handleAddToCart()}
           className="inline-flex text-dark hover:text-white bg-gray-1 border border-gray-3 py-2.5 px-6 rounded-md ease-out duration-200 hover:bg-blue hover:border-gray-3"
         >
-          Add to Cart
+          Thêm vào giỏ
         </button>
       </div>
     </div>

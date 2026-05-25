@@ -6,6 +6,7 @@ import { useCartStore } from "@/store";
 import SingleItem from "./SingleItem";
 import Link from "next/link";
 import EmptyCart from "./EmptyCart";
+import { formatVND } from "@/utils/currency";
 
 const CartSidebarModal = () => {
   const { isCartModalOpen, closeCartModal } = useCartModalContext();
@@ -85,9 +86,9 @@ const CartSidebarModal = () => {
 
           <div className="border-t border-gray-3 bg-white pt-5 pb-4 sm:pb-7.5 lg:pb-11 mt-7.5 sticky bottom-0">
             <div className="flex items-center justify-between gap-5 mb-6">
-              <p className="font-medium text-xl text-dark">Subtotal:</p>
+              <p className="font-medium text-xl text-dark">Tạm tính:</p>
 
-              <p className="font-medium text-xl text-dark">${getTotal().toFixed(2)}</p>
+              <p className="font-medium text-xl text-dark">{formatVND(getTotal())}</p>
             </div>
 
             <div className="flex items-center gap-4">
@@ -96,14 +97,14 @@ const CartSidebarModal = () => {
                 href="/cart"
                 className="w-full flex justify-center font-medium text-white bg-blue py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-blue-dark"
               >
-                View Cart
+                Xem giỏ hàng
               </Link>
 
               <Link
                 href="/checkout"
                 className="w-full flex justify-center font-medium text-white bg-dark py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-opacity-95"
               >
-                Checkout
+                Thanh toán
               </Link>
             </div>
           </div>
