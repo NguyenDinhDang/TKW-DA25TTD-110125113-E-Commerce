@@ -25,9 +25,9 @@ const ShopWithSidebar = () => {
   };
 
   const options = [
-    { label: "Latest Products", value: "0" },
-    { label: "Best Selling", value: "1" },
-    { label: "Old Products", value: "2" },
+    { label: "Newest arrivals", value: "0" },
+    { label: "Best selling", value: "1" },
+    { label: "Price: low to high", value: "2" },
   ];
 
   const categories = [
@@ -99,10 +99,7 @@ const ShopWithSidebar = () => {
 
   return (
     <>
-      <Breadcrumb
-        title={"Explore All Products"}
-        pages={["shop", "/", "shop with sidebar"]}
-      />
+      <Breadcrumb title={"Shop Products"} pages={["shop", "/", "products"]} />
       <section className="overflow-hidden relative pb-20 pt-5 lg:pt-20 xl:pt-28 bg-[#f3f4f6]">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex gap-7.5">
@@ -151,8 +148,8 @@ const ShopWithSidebar = () => {
                   {/* <!-- filter box --> */}
                   <div className="bg-white shadow-1 rounded-lg py-4 px-5">
                     <div className="flex items-center justify-between">
-                      <p>Filters:</p>
-                      <button className="text-blue">Clean All</button>
+                      <p>Filters</p>
+                      <button className="text-blue">Clear all</button>
                     </div>
                   </div>
 
@@ -184,8 +181,8 @@ const ShopWithSidebar = () => {
                     <CustomSelect options={options} />
 
                     <p>
-                      Showing <span className="text-dark">9 of 50</span>{" "}
-                      Products
+                      Showing <span className="text-dark">{shopData.length} of 50</span>{" "}
+                      products
                     </p>
                   </div>
 

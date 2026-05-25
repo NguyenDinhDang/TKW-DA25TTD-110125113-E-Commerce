@@ -1,23 +1,150 @@
 import React from "react";
-import Hero from "./Hero";
-import Categories from "./Categories";
-import NewArrival from "./NewArrivals";
-import PromoBanner from "./PromoBanner";
-import BestSeller from "./BestSeller";
-import CounDown from "./Countdown";
-import Testimonials from "./Testimonials";
+import Link from "next/link";
+import Image from "next/image";
+import shopData from "../Shop/shopData";
+import SingleGridItem from "../Shop/SingleGridItem";
 import Newsletter from "../Common/Newsletter";
 
+const categories = [
+  { name: "Phones", count: 18 },
+  { name: "Laptops", count: 12 },
+  { name: "Audio", count: 24 },
+  { name: "Gaming", count: 16 },
+  { name: "Smart Home", count: 9 },
+  { name: "Accessories", count: 31 },
+];
+
+const quickStats = [
+  "Free delivery from $199",
+  "7-day return window",
+  "Secure payment",
+];
+
 const Home = () => {
+  const featuredProducts = shopData.slice(0, 6);
+
   return (
-    <main>
-      <Hero />
-      <Categories />
-      <NewArrival />
-      <PromoBanner />
-      <BestSeller />
-      <CounDown />
-      <Testimonials />
+    <main className="bg-[#f3f4f6] pt-46 sm:pt-42 lg:pt-34 xl:pt-46">
+      <section className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-10">
+        <div className="grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-7.5">
+          <aside className="bg-white rounded-lg shadow-1 p-5 h-fit">
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="font-semibold text-lg text-dark">Shop by category</h2>
+              <Link href="/shop-with-sidebar" className="text-custom-sm text-blue">
+                View all
+              </Link>
+            </div>
+
+            <ul className="flex flex-col divide-y divide-gray-3">
+              {categories.map((category) => (
+                <li key={category.name}>
+                  <Link
+                    href="/shop-with-sidebar"
+                    className="flex items-center justify-between py-3 text-custom-sm text-dark hover:text-blue"
+                  >
+                    <span>{category.name}</span>
+                    <span className="text-dark-4">{category.count}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 rounded-lg bg-gray-1 p-4">
+              <p className="font-medium text-dark mb-3">Today&apos;s deal</p>
+              <p className="text-custom-sm text-dark-4 mb-4">
+                Save up to 35% on selected phones, headphones, and desk gear.
+              </p>
+              <Link
+                href="/shop-with-sidebar"
+                className="inline-flex rounded-[5px] bg-blue px-4 py-2 text-custom-sm font-medium text-white hover:bg-blue-dark"
+              >
+                Shop deals
+              </Link>
+            </div>
+          </aside>
+
+          <div className="flex flex-col gap-7.5">
+            <section className="bg-white rounded-lg shadow-1 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_330px]">
+                <div className="p-6 sm:p-10 flex flex-col justify-center">
+                  <span className="text-custom-sm font-medium text-blue mb-3">
+                    New season essentials
+                  </span>
+                  <h1 className="text-dark font-semibold text-3xl sm:text-4xl xl:text-heading-2 mb-4">
+                    TechMart Electronics Store
+                  </h1>
+                  <p className="text-dark-4 max-w-[560px] mb-7">
+                    Find reliable phones, laptops, accessories, gaming gear, and
+                    smart devices in one clean shopping experience.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    {quickStats.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-[5px] border border-gray-3 bg-gray-1 px-3 py-2 text-custom-sm text-dark"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/shop-with-sidebar"
+                      className="inline-flex rounded-[5px] bg-blue px-5 py-3 font-medium text-white hover:bg-blue-dark"
+                    >
+                      Browse products
+                    </Link>
+                    <Link
+                      href="/cart"
+                      className="inline-flex rounded-[5px] border border-gray-3 px-5 py-3 font-medium text-dark hover:border-blue hover:text-blue"
+                    >
+                      View cart
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="relative bg-[#eef2ff] min-h-[280px] flex items-center justify-center">
+                  <Image
+                    src="/images/hero/hero-01.png"
+                    alt="Featured wireless headphones"
+                    width={260}
+                    height={320}
+                    priority
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+                <div>
+                  <span className="text-custom-sm font-medium text-blue">
+                    Featured products
+                  </span>
+                  <h2 className="font-semibold text-xl xl:text-heading-5 text-dark mt-1">
+                    Popular picks for your setup
+                  </h2>
+                </div>
+                <Link
+                  href="/shop-with-sidebar"
+                  className="font-medium text-custom-sm text-blue"
+                >
+                  Open full shop
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-7.5 gap-y-9">
+                {featuredProducts.map((item) => (
+                  <SingleGridItem item={item} key={item.id} />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
       <Newsletter />
     </main>
   );
