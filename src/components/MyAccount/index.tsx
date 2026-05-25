@@ -535,7 +535,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Phone: 1234 567890
+                      Phone: 110125113
                     </p>
 
                     <p className="flex gap-2.5 text-custom-sm">
@@ -561,7 +561,7 @@ const MyAccount = () => {
                           </clipPath>
                         </defs>
                       </svg>
-                      Address: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
+                      Địa chỉ: 123 Đường ABC, Phường XYZ, Quận 1, TP.HCM
                     </p>
                   </div>
                 </div>
@@ -587,8 +587,8 @@ const MyAccount = () => {
                         type="text"
                         name="firstName"
                         id="firstName"
-                        placeholder="Jhon"
-                        value="Jhon"
+                        placeholder="Can"
+                        value="Can"
                         className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                       />
                     </div>
@@ -602,8 +602,8 @@ const MyAccount = () => {
                         type="text"
                         name="lastName"
                         id="lastName"
-                        placeholder="Deo"
-                        value="Deo"
+                        placeholder="Vu Nhu "
+                        value="Vu Nhu"
                         className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                       />
                     </div>
@@ -674,7 +674,7 @@ const MyAccount = () => {
 
                   <div className="mb-5">
                     <label htmlFor="newPassword" className="block mb-2.5">
-                      New Password
+                      Mật khẩu mới
                     </label>
 
                     <input
@@ -691,7 +691,7 @@ const MyAccount = () => {
                       htmlFor="confirmNewPassword"
                       className="block mb-2.5"
                     >
-                      Confirm New Password
+                      Xác nhận mật khẩu mới
                     </label>
 
                     <input
@@ -707,7 +707,7 @@ const MyAccount = () => {
                     type="submit"
                     className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                   >
-                    Change Password
+                    Thay đổi mật khẩu
                   </button>
                 </div>
               </form>
