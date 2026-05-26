@@ -506,7 +506,7 @@ const MyAccount = () => {
                           fill=""
                         />
                       </svg>
-                      Đặng Đình Nguyên
+                      dangdinhnguyen099@gmail.com
                     </p>
 
                     <p className="flex items-center gap-2.5 text-custom-sm">
