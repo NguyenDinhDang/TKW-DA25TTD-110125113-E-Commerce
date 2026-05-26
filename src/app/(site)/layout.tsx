@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import "../css/euclid-circular-a-font.css";
+import { Inter } from "next/font/google";
 import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -16,6 +16,8 @@ import PreviewSliderModal from "@/components/Common/PreviewSlider";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
 
+const inter = Inter({ subsets: ["latin", "vietnamese"] });
+
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +31,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body>
+      <body className={inter.className}>
         {loading ? (
           <PreLoader />
         ) : (
