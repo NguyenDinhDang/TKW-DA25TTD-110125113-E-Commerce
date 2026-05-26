@@ -106,7 +106,7 @@ const Home = () => {
 
                 <div className="relative bg-[#eef2ff] min-h-[280px] flex items-center justify-center">
                   <Image
-                    src="./images/hero/Lenovo_legion_5_pro.png"
+                    src="/images/hero/Lenovo_legion_5_pro.png"
                     alt="Featured wireless headphones"
                     width={260}
                     height={320}
