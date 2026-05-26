@@ -146,7 +146,7 @@ const Header = () => {
                   Hỗ trợ khách hàng 24/7
                 </span>
                 <p className="font-medium text-custom-sm text-dark">
-                  (+84) 3638 14613
+                  (+84) 1101 25113
                 </p>
               </div>
             </div>
