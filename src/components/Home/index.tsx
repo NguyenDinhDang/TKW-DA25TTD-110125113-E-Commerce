@@ -29,9 +29,9 @@ const Home = () => {
         <div className="grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-7.5">
           <aside className="bg-white rounded-lg shadow-1 p-5 h-fit">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="font-semibold text-lg text-dark">Shop by category</h2>
+              <h2 className="font-semibold text-lg text-dark">Mua hang theo phân loại</h2>
               <Link href="/shop-with-sidebar" className="text-custom-sm text-blue">
-                View all
+                Xem tất cả
               </Link>
             </div>
 
@@ -50,15 +50,15 @@ const Home = () => {
             </ul>
 
             <div className="mt-6 rounded-lg bg-gray-1 p-4">
-              <p className="font-medium text-dark mb-3">Today&apos;s deal</p>
+              <p className="font-medium text-dark mb-3">Hàng ngon vừa cập bến hôm nay</p>
               <p className="text-custom-sm text-dark-4 mb-4">
-                Save up to 35% on selected phones, headphones, and desk gear.
+                Tiết kiệm 2% nếu mua hàng trong 24 giờ tới. Đừng bỏ lỡ!
               </p>
               <Link
                 href="/shop-with-sidebar"
                 className="inline-flex rounded-[5px] bg-blue px-4 py-2 text-custom-sm font-medium text-white hover:bg-blue-dark"
               >
-                Shop deals
+                Mua liền đi
               </Link>
             </div>
           </aside>
@@ -68,14 +68,13 @@ const Home = () => {
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_330px]">
                 <div className="p-6 sm:p-10 flex flex-col justify-center">
                   <span className="text-custom-sm font-medium text-blue mb-3">
-                    New season essentials
+                    Mùa vô học mới đã bắt đầu
                   </span>
                   <h1 className="text-dark font-semibold text-3xl sm:text-4xl xl:text-heading-2 mb-4">
-                    TechMart Electronics Store
+                    Nguyên Store đang có ưu đãi lớn cho mùa tựu trường này!
                   </h1>
                   <p className="text-dark-4 max-w-[560px] mb-7">
-                    Find reliable phones, laptops, accessories, gaming gear, and
-                    smart devices in one clean shopping experience.
+                    Từ máy tính xách tay đến phụ kiện, chúng tôi có mọi thứ bạn cần để bắt đầu năm học mới với phong cách và hiệu suất. Đừng bỏ lỡ cơ hội tiết kiệm lớn này!
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-8">
@@ -94,13 +93,13 @@ const Home = () => {
                       href="/shop-with-sidebar"
                       className="inline-flex rounded-[5px] bg-blue px-5 py-3 font-medium text-white hover:bg-blue-dark"
                     >
-                      Browse products
+                      Tiết kiệm ngay
                     </Link>
                     <Link
                       href="/cart"
                       className="inline-flex rounded-[5px] border border-gray-3 px-5 py-3 font-medium text-dark hover:border-blue hover:text-blue"
                     >
-                      View cart
+                      Xem giỏ hàng
                     </Link>
                   </div>
                 </div>
@@ -121,17 +120,17 @@ const Home = () => {
               <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
                 <div>
                   <span className="text-custom-sm font-medium text-blue">
-                    Featured products
+                    Sản phẩm nổi bật
                   </span>
                   <h2 className="font-semibold text-xl xl:text-heading-5 text-dark mt-1">
-                    Popular picks for your setup
+                    Lựa chọn phổ biến cho setup của bạn
                   </h2>
                 </div>
                 <Link
                   href="/shop-with-sidebar"
                   className="font-medium text-custom-sm text-blue"
                 >
-                  Open full shop
+                  Mở rộng lựa chọn
                 </Link>
               </div>
 
