@@ -6,18 +6,18 @@ import SingleGridItem from "../Shop/SingleGridItem";
 import Newsletter from "../Common/Newsletter";
 
 const categories = [
-  { name: "Phones", count: 18 },
-  { name: "Laptops", count: 12 },
-  { name: "Audio", count: 24 },
-  { name: "Gaming", count: 16 },
-  { name: "Smart Home", count: 9 },
-  { name: "Accessories", count: 31 },
+  { name: "Điện thoại", count: 18 },
+  { name: "Máy tính xách tay", count: 12 },
+  { name: "Tai nghe", count: 24 },
+  { name: "Các sản phẩm chơi game", count: 16 },
+  { name: "Nhà thông minh", count: 9 },
+  { name: "Phụ kiện", count: 31 },
 ];
 
 const quickStats = [
-  "Free delivery from $199",
-  "7-day return window",
-  "Secure payment",
+  "Giao hàng miễn phí từ 500k",
+  "Sản phẩm có thể hoàn trả trong 7 ngày",
+  "Thanh toán an toàn",
 ];
 
 const Home = () => {
@@ -106,7 +106,7 @@ const Home = () => {
 
                 <div className="relative bg-[#eef2ff] min-h-[280px] flex items-center justify-center">
                   <Image
-                    src="/images/hero/hero-01.png"
+                    src="./images/hero/Lenovo_legion_5_pro.png"
                     alt="Featured wireless headphones"
                     width={260}
                     height={320}
