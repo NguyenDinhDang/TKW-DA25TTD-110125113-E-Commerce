@@ -10,10 +10,10 @@ Bộ tài liệu này được viết để bàn giao kỹ thuật và báo cáo
 4. [State va du lieu](./04-state-va-du-lieu.md)
 5. [Huong dan van hanh](./05-huong-dan-van-hanh.md)
 6. [Bao cao ky thuat](./06-bao-cao-ky-thuat.md)
+7. [So do Mermaid](./07-so-do-mermaid.md)
 
 ## Ghi chu
 
 - Du an hien tai la frontend tich hop static export.
 - Du lieu san pham va nhieu trang chuc nang dang mo phong bang data local va browser storage.
 - Cac file cua Redux van con trong source, nhung layer Zustand la luong dang dung thuc te.
-
