@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
+import { useCartSidebarModal } from "@/store";
 
 const EmptyCart = () => {
-  const { closeCartModal } = useCartModalContext();
+  const { closeModal: closeCartModal } = useCartSidebarModal();
 
   return (
     <div className="text-center">

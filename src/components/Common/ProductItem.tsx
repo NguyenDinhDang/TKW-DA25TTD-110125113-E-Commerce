@@ -2,14 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import { Product } from "@/types/product";
-import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { useCartStore, useQuickViewStore, useWishlistStore } from "@/store";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { formatVND } from "@/utils/currency";
 
 const ProductItem = ({ item }: { item: Product }) => {
-  const { openModal } = useModalContext();
   const { addItem } = useCartStore();
   const { openQuickView } = useQuickViewStore();
   const { addItem: addToWishlist } = useWishlistStore();
@@ -59,7 +57,6 @@ const ProductItem = ({ item }: { item: Product }) => {
         <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
           <button
             onClick={() => {
-              openModal();
               handleQuickViewUpdate();
             }}
             id="newOne"

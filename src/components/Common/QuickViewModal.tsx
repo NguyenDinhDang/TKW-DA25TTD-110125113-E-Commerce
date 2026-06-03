@@ -1,28 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { useModalContext } from "@/app/context/QuickViewModalContext";
-import { useCartStore, useQuickViewStore } from "@/store";
+import { useCartStore, usePreviewSliderStore, useQuickViewStore } from "@/store";
 import Image from "next/image";
-import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import toast from "react-hot-toast";
 import { formatVND } from "@/utils/currency";
 
 const QuickViewModal = () => {
-  const { isModalOpen, closeModal } = useModalContext();
-  const { openPreviewModal } = usePreviewSlider();
   const [quantity, setQuantity] = useState(1);
 
-  // Get product from Zustand store
-  const product = useQuickViewStore((state) => state.product);
+  const { isOpen, closeQuickView, product } = useQuickViewStore();
+  const { openPreviewModal } = usePreviewSliderStore();
   const { addItem } = useCartStore();
 
   const [activePreview, setActivePreview] = useState(0);
-
-  // preview modal
-  const handlePreviewSlider = () => {
-    openPreviewModal();
-  };
 
   // add to cart
   const handleAddToCart = () => {
@@ -37,18 +28,18 @@ const QuickViewModal = () => {
     });
 
     toast.success("Đã thêm vào giỏ hàng!");
-    closeModal();
+    closeQuickView();
   };
 
   useEffect(() => {
     // closing modal while clicking outside
     function handleClickOutside(event) {
       if (!event.target.closest(".modal-content")) {
-        closeModal();
+        closeQuickView();
       }
     }
 
-    if (isModalOpen) {
+    if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
@@ -57,17 +48,17 @@ const QuickViewModal = () => {
 
       setQuantity(1);
     };
-  }, [isModalOpen, closeModal]);
+  }, [isOpen, closeQuickView]);
 
   return (
     <div
-      className={`${isModalOpen ? "z-99999" : "hidden"
+      className={`${isOpen ? "z-99999" : "hidden"
         } fixed top-0 left-0 overflow-y-auto no-scrollbar w-full h-screen sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
     >
       <div className="flex items-center justify-center ">
         <div className="w-full max-w-[1100px] rounded-xl shadow-3 bg-white p-7.5 relative modal-content">
           <button
-            onClick={() => closeModal()}
+            onClick={() => closeQuickView()}
             aria-label="button for close modal"
             className="absolute top-0 right-0 sm:top-6 sm:right-6 flex items-center justify-center w-10 h-10 rounded-full ease-in duration-150 bg-meta text-body hover:text-dark"
           >
@@ -114,7 +105,7 @@ const QuickViewModal = () => {
                 <div className="relative z-1 overflow-hidden flex items-center justify-center w-full sm:min-h-[508px] bg-gray-1 rounded-lg border border-gray-3">
                   <div>
                     <button
-                      onClick={handlePreviewSlider}
+                      onClick={openPreviewModal}
                       aria-label="button for zoom"
                       className="gallery__Image w-10 h-10 rounded-[5px] bg-white shadow-1 flex items-center justify-center ease-out duration-200 text-dark hover:text-blue absolute top-4 lg:top-8 right-4 lg:right-8 z-50"
                     >

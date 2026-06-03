@@ -8,6 +8,8 @@ export type { User } from './authStore';
 export { useQuickViewStore } from './quickViewStore';
 export type { Product } from './quickViewStore';
 
+export { usePreviewSliderStore } from './previewSliderStore';
+
 export { useWishlistStore } from './wishlistStore';
 export type { WishlistItem } from './wishlistStore';
 

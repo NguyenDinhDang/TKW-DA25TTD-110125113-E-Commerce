@@ -2,7 +2,6 @@
 import React from "react";
 
 import { Product } from "@/types/product";
-import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { useCartStore, useQuickViewStore, useWishlistStore } from "@/store";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,7 +9,6 @@ import toast from "react-hot-toast";
 import { formatVND } from "@/utils/currency";
 
 const SingleListItem = ({ item }: { item: Product }) => {
-  const { openModal } = useModalContext();
   const { addItem } = useCartStore();
   const { openQuickView } = useQuickViewStore();
   const { addItem: addToWishlist } = useWishlistStore();
@@ -59,11 +57,10 @@ const SingleListItem = ({ item }: { item: Product }) => {
           <Image src={item.imgs.previews[0]} alt="" width={250} height={250} />
 
           <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
-            <button
-              onClick={() => {
-                openModal();
-                handleQuickViewUpdate();
-              }}
+          <button
+            onClick={() => {
+              handleQuickViewUpdate();
+            }}
               aria-label="button for quick view"
               className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-blue"
             >

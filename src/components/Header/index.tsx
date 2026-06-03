@@ -4,8 +4,7 @@ import Link from "next/link";
 import CustomSelect from "./CustomSelect";
 import { menuData } from "./menuData";
 import Dropdown from "./Dropdown";
-import { useCartStore } from "@/store";
-import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
+import { useCartSidebarModal, useCartStore } from "@/store";
 import Image from "next/image";
 import { formatVND } from "@/utils/currency";
 
@@ -13,7 +12,7 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-  const { openCartModal } = useCartModalContext();
+  const { openModal: openCartModal } = useCartSidebarModal();
 
   const { items: cartItems, getTotal, getItemCount } = useCartStore();
 

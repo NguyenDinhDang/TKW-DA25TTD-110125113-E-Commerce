@@ -4,13 +4,12 @@ import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
 import RecentlyViewdItems from "./RecentlyViewd";
-import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
-import { useQuickViewStore } from "@/store";
+import { usePreviewSliderStore, useQuickViewStore } from "@/store";
 import { formatVND } from "@/utils/currency";
 
 const ShopDetails = () => {
   const [activeColor, setActiveColor] = useState("blue");
-  const { openPreviewModal } = usePreviewSlider();
+  const { openPreviewModal } = usePreviewSliderStore();
   const [previewImg, setPreviewImg] = useState(0);
 
   const [storage, setStorage] = useState("gb128");

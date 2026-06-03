@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Product } from "@/types/product";
-import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { useCartStore, useQuickViewStore, useWishlistStore } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +8,6 @@ import toast from "react-hot-toast";
 import { formatVND } from "@/utils/currency";
 
 const SingleItem = ({ item }: { item: Product }) => {
-  const { openModal } = useModalContext();
   const { addItem } = useCartStore();
   const { openQuickView } = useQuickViewStore();
   const { addItem: addToWishlist } = useWishlistStore();
@@ -110,7 +108,6 @@ const SingleItem = ({ item }: { item: Product }) => {
           <button
             onClick={() => {
               handleQuickViewUpdate();
-              openModal();
             }}
             aria-label="button for quick view"
             id="bestOne"

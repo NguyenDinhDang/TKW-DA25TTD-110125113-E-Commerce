@@ -1,15 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
-import { useCartStore } from "@/store";
+import { useCartSidebarModal, useCartStore } from "@/store";
 import SingleItem from "./SingleItem";
 import Link from "next/link";
 import EmptyCart from "./EmptyCart";
 import { formatVND } from "@/utils/currency";
 
 const CartSidebarModal = () => {
-  const { isCartModalOpen, closeCartModal } = useCartModalContext();
+  const { isOpen: isCartModalOpen, closeModal: closeCartModal } = useCartSidebarModal();
   const { items, getTotal } = useCartStore();
 
   useEffect(() => {
