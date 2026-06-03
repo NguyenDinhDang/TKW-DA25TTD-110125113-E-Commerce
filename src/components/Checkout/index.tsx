@@ -31,14 +31,14 @@ const Checkout = () => {
                 <div className="bg-white shadow-1 rounded-[10px] p-4 sm:p-8.5 mt-7.5">
                   <div>
                     <label htmlFor="notes" className="block mb-2.5">
-                      Other Notes (optional)
+                      Khác (Tuỳ)
                     </label>
 
                     <textarea
                       name="notes"
                       id="notes"
                       rows={5}
-                      placeholder="Notes about your order, e.g. speacial notes for delivery."
+                      placeholder="Ghi chú về đơn hàng của bạn, ví dụ: thời gian giao hàng mong muốn, chỉ dẫn đặc biệt, v.v..."
                       className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     ></textarea>
                   </div>
@@ -51,7 +51,7 @@ const Checkout = () => {
                 <div className="bg-white shadow-1 rounded-[10px]">
                   <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
                     <h3 className="font-medium text-xl text-dark">
-                      Your Order
+                      Mặt hàng bạn chọn
                     </h3>
                   </div>
 
@@ -59,11 +59,11 @@ const Checkout = () => {
                     {/* <!-- title --> */}
                     <div className="flex items-center justify-between py-5 border-b border-gray-3">
                       <div>
-                        <h4 className="font-medium text-dark">Product</h4>
+                        <h4 className="font-medium text-dark">Sản phẩm</h4>
                       </div>
                       <div>
                         <h4 className="font-medium text-dark text-right">
-                          Subtotal
+                          Tổng cộng
                         </h4>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const Checkout = () => {
                     {/* <!-- product item --> */}
                     <div className="flex items-center justify-between py-5 border-b border-gray-3">
                       <div>
-                        <p className="text-dark">Shipping Fee</p>
+                        <p className="text-dark">Giao hàng</p>
                       </div>
                       <div>
                         <p className="text-dark text-right">$15.00</p>
@@ -111,7 +111,7 @@ const Checkout = () => {
                     {/* <!-- total --> */}
                     <div className="flex items-center justify-between pt-5">
                       <div>
-                        <p className="font-medium text-lg text-dark">Total</p>
+                        <p className="font-medium text-lg text-dark">Tổng cộng</p>
                       </div>
                       <div>
                         <p className="font-medium text-lg text-dark text-right">
@@ -136,7 +136,7 @@ const Checkout = () => {
                   type="submit"
                   className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
                 >
-                  Process to Checkout
+                  Tiến hành thanh toán
                 </button>
               </div>
             </div>

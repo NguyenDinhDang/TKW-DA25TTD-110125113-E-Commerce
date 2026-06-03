@@ -33,16 +33,16 @@ const Shipping = () => {
       <div className={`p-4 sm:p-8.5 ${dropdown ? "block" : "hidden"}`}>
         <div className="mb-5">
           <label htmlFor="countryName" className="block mb-2.5">
-            Country/ Region
-            <span className="text-red">*</span>
+            Quốc gia/ Khu vực <span className="text-red">*</span>
           </label>
 
           <div className="relative">
             <select className="w-full bg-gray-1 rounded-md border border-gray-3 text-dark-4 py-3 pl-5 pr-9 duration-200 appearance-none outline-none focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20">
-              <option value="0">Australia</option>
-              <option value="1">America</option>
-              <option value="2">England</option>
-            </select>
+              <option value="0">Việt Nam</option>
+              <option value="1">Mỹ</option>
+              <option value="2">Anh</option>
+            </select> 
+            <span className="text-red">*</span>
 
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-dark-4">
               <svg

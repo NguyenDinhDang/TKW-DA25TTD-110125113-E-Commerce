@@ -20,12 +20,12 @@ const Error = () => {
               />
 
               <h2 className="font-medium text-dark text-xl sm:text-2xl mb-3">
-                Sorry, the page can’t be found
+                XIN LŨI, TRANG BẠN ĐANG TÌM KIẾM KHÔNG TỒN TẠI!
               </h2>
 
               <p className="max-w-[410px] w-full mx-auto mb-7.5">
-                The page you were looking for appears to have been moved,
-                deleted or does not exist.
+                Trang bạn đang tìm kiếm dường như đã bị di chuyển,
+                xóa hoặc không tồn tại.
               </p>
 
               <Link
@@ -45,7 +45,7 @@ const Error = () => {
                     fill=""
                   />
                 </svg>
-                Back to Home
+                Quay lại Trang chủ
               </Link>
             </div>
           </div>

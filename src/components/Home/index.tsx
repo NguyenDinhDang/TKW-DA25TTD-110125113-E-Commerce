@@ -12,6 +12,8 @@ const categories = [
   { name: "Các sản phẩm chơi game", count: 16 },
   { name: "Nhà thông minh", count: 9 },
   { name: "Phụ kiện", count: 31 },
+  { name: "Cáp sạc", count: 14 },
+  { name: "Bàn phím", count: 1 },
 ];
 
 const quickStats = [
@@ -29,7 +31,7 @@ const Home = () => {
         <div className="grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-7.5">
           <aside className="bg-white rounded-lg shadow-1 p-5 h-fit">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="font-semibold text-lg text-dark">Mua hang theo phân loại</h2>
+              <h2 className="font-semibold text-lg text-dark">Mua hàng theo phân loại</h2>
               <Link href="/shop-with-sidebar" className="text-custom-sm text-blue">
                 Xem tất cả
               </Link>
@@ -71,7 +73,7 @@ const Home = () => {
                     Mùa vô học mới đã bắt đầu
                   </span>
                   <h1 className="text-dark font-semibold text-3xl sm:text-4xl xl:text-heading-2 mb-4">
-                    Nguyên Store đang có ưu đãi lớn cho mùa tựu trường này!
+                    Nguyên & Tân Store đang có ưu đãi lớn cho mùa tựu trường này!
                   </h1>
                   <p className="text-dark-4 max-w-[560px] mb-7">
                     Từ máy tính xách tay đến phụ kiện, chúng tôi có mọi thứ bạn cần để bắt đầu năm học mới với phong cách và hiệu suất. Đừng bỏ lỡ cơ hội tiết kiệm lớn này!
