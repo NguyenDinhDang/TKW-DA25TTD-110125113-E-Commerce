@@ -52,6 +52,86 @@ const PaymentMethod = () => {
           </label>
 
           <label
+            htmlFor="mbbank"
+            className="flex cursor-pointer select-none items-center gap-4"
+          >
+            <div className="relative">
+              <input
+                type="checkbox"
+                name="mbbank"
+                id="mbbank"
+                className="sr-only"
+                onChange={() => setPayment("mbbank")}
+              />
+              <div
+                className={`flex h-4 w-4 items-center justify-center rounded-full ${
+                  payment === "mbbank"
+                    ? "border-4 border-blue"
+                    : "border border-gray-4"
+                }`}
+              ></div>
+            </div>
+
+            <div
+              className={`rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-gray-2 hover:border-transparent hover:shadow-none min-w-[240px] ${
+                payment === "mbbank"
+                  ? "border-transparent bg-gray-2"
+                  : " border-gray-4 shadow-1"
+              }`}
+            >
+              <div className="flex items-center">
+                <div className="pr-2.5">
+                  <Image src="/images/payment/MB.jpg" alt="mbbank" width={35} height={35} className="rounded" />
+                </div>
+
+                <div className="border-l border-gray-4 pl-2.5">
+                  <p>Chuyển khoản Ngân hàng MB Bank</p>
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <label
+            htmlFor="momo"
+            className="flex cursor-pointer select-none items-center gap-4"
+          >
+            <div className="relative">
+              <input
+                type="checkbox"
+                name="momo"
+                id="momo"
+                className="sr-only"
+                onChange={() => setPayment("momo")}
+              />
+              <div
+                className={`flex h-4 w-4 items-center justify-center rounded-full ${
+                  payment === "momo"
+                    ? "border-4 border-blue"
+                    : "border border-gray-4"
+                }`}
+              ></div>
+            </div>
+
+            <div
+              className={`rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-gray-2 hover:border-transparent hover:shadow-none min-w-[240px] ${
+                payment === "momo"
+                  ? "border-transparent bg-gray-2"
+                  : " border-gray-4 shadow-1"
+              }`}
+            >
+              <div className="flex items-center">
+                <div className="pr-2.5">
+                  <Image src="/images/payment/momo.png" alt="momo" width={35} height={35} className="rounded" />
+                </div>
+
+                <div className="border-l border-gray-4 pl-2.5">
+                  <p>Thanh toán qua Ví MoMo</p>
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <label
             htmlFor="cash"
             className="flex cursor-pointer select-none items-center gap-4"
           >
