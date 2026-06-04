@@ -3,8 +3,8 @@ import Checkout from "@/components/Checkout";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Checkout Page | NextCommerce Nextjs E-commerce template",
-  description: "This is Checkout Page for NextCommerce Template",
+  title: "Thanh toán | TechMart E-commerce",
+  description: "Hoàn tất đơn đặt hàng của bạn nhanh chóng và bảo mật.",
   // other metadata
 };
 

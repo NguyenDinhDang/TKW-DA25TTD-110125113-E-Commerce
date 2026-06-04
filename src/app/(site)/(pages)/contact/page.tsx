@@ -2,8 +2,8 @@ import Contact from "@/components/Contact";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Contact Page | NextCommerce Nextjs E-commerce template",
-  description: "This is Contact Page for NextCommerce Template",
+  title: "Liên hệ | TechMart E-commerce",
+  description: "Liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất.",
   // other metadata
 };
 

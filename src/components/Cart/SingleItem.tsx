@@ -10,7 +10,7 @@ const SingleItem = ({ item }) => {
 
   const handleRemoveFromCart = () => {
     removeItem(item.id);
-    toast.success("Removed from cart!");
+    toast.success("Đã xóa khỏi giỏ hàng!");
   };
 
   const handleIncreaseQuantity = () => {

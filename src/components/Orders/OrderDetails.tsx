@@ -5,14 +5,14 @@ const OrderDetails = ({ orderItem }: any) => {
     <>
       <div className="items-center justify-between py-4.5 px-7.5 hidden md:flex ">
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Order</p>
+          <p className="text-custom-sm text-dark">Đơn hàng</p>
         </div>
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Date</p>
+          <p className="text-custom-sm text-dark">Ngày</p>
         </div>
 
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Status</p>
+          <p className="text-custom-sm text-dark">Trạng thái</p>
         </div>
 
         {/* <div className="min-w-[113px]">
@@ -20,7 +20,7 @@ const OrderDetails = ({ orderItem }: any) => {
         </div> */}
 
         <div className="min-w-[113px]">
-          <p className="text-custom-sm text-dark">Total</p>
+          <p className="text-custom-sm text-dark">Tổng cộng</p>
         </div>
 
         {/* <div className="min-w-[113px]">
@@ -52,7 +52,13 @@ const OrderDetails = ({ orderItem }: any) => {
                 : "Unknown Status"
             }`}
           >
-            {orderItem.status}
+            {orderItem.status === "delivered"
+              ? "Đã giao"
+              : orderItem.status === "on-hold"
+              ? "Tạm giữ"
+              : orderItem.status === "processing"
+              ? "Đang xử lý"
+              : "Không rõ trạng thái"}
           </p>
         </div>
 
@@ -67,7 +73,7 @@ const OrderDetails = ({ orderItem }: any) => {
         </div>
       </div>
       <div className="px-7.5 w-full">
-        <p className="font-bold">Shipping Address:</p>{" "}
+        <p className="font-bold">Địa chỉ giao hàng:</p>{" "}
         <p>942 Aspen Road Encino, CA 91316</p>
       </div>
     </>

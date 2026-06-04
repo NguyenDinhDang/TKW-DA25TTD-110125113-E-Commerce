@@ -3,8 +3,8 @@ import ShopDetails from "@/components/ShopDetails";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Shop Details Page | NextCommerce Nextjs E-commerce template",
-  description: "This is Shop Details Page for NextCommerce Template",
+  title: "Chi tiết sản phẩm | TechMart E-commerce",
+  description: "Xem chi tiết thông số kỹ thuật, đánh giá và thông tin bổ sung của sản phẩm.",
   // other metadata
 };
 

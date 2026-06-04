@@ -3,7 +3,7 @@ const shopData: Product[] = [
   {
     title: "Havit HV-G69 USB Gamepad",
     category: "Gaming",
-    description: "Wired USB controller for PC gaming with responsive buttons.",
+    description: "Tay cầm chơi game cổng USB cho PC với các nút bấm nhạy.",
     rating: 4.7,
     reviews: 15,
     price: 59.0,
@@ -23,7 +23,7 @@ const shopData: Product[] = [
   {
     title: "iPhone 14 Plus 128GB",
     category: "Phones",
-    description: "Large-screen iPhone with dependable battery life and 128GB storage.",
+    description: "Điện thoại iPhone màn hình lớn với dung lượng pin trâu và bộ nhớ 128GB.",
     rating: 4.8,
     reviews: 5,
     price: 899.0,
@@ -43,7 +43,7 @@ const shopData: Product[] = [
   {
     title: "Apple iMac M1 24-inch 2021",
     category: "Desktop",
-    description: "All-in-one desktop with Apple M1 performance and a 24-inch display.",
+    description: "Máy tính để bàn tất-cả-trong-một hiệu năng chip M1 và màn hình 24 inch cực đẹp.",
     rating: 4.6,
     reviews: 5,
     price: 1299.0,
@@ -63,7 +63,7 @@ const shopData: Product[] = [
   {
     title: "MacBook Air M1 8GB/256GB",
     category: "Laptops",
-    description: "Thin and quiet laptop for study, office work, and daily productivity.",
+    description: "Laptop siêu mỏng nhẹ và chạy êm ái, lý tưởng cho học tập, văn phòng và công việc hàng ngày.",
     rating: 4.7,
     reviews: 6,
     price: 999.0,
@@ -83,7 +83,7 @@ const shopData: Product[] = [
   {
     title: "Apple Watch Ultra",
     category: "Wearables",
-    description: "Rugged smartwatch for fitness, notifications, and outdoor tracking.",
+    description: "Đồng hồ thông minh siêu bền hỗ trợ thể thao, nhận thông báo và theo dõi ngoài trời.",
     rating: 4.5,
     reviews: 3,
     price: 799.0,
@@ -103,7 +103,7 @@ const shopData: Product[] = [
   {
     title: "Logitech MX Master 3 Mouse",
     category: "Accessories",
-    description: "Ergonomic wireless mouse for office work and creative workflows.",
+    description: "Chuột không dây công thái học phục vụ tối ưu cho văn phòng và thiết kế sáng tạo.",
     rating: 4.9,
     reviews: 15,
     price: 99.0,
@@ -123,7 +123,7 @@ const shopData: Product[] = [
   {
     title: "Apple iPad Air 5th Gen - 64GB",
     category: "Tablets",
-    description: "Light tablet for notes, streaming, drawing, and mobile work.",
+    description: "Máy tính bảng mỏng nhẹ giúp ghi chú, xem phim, vẽ và làm việc di động dễ dàng.",
     rating: 4.6,
     reviews: 15,
     price: 599.0,
@@ -143,7 +143,7 @@ const shopData: Product[] = [
   {
     title: "Asus RT Dual Band Router",
     category: "Networking",
-    description: "Dual-band router for stable home and small-office Wi-Fi coverage.",
+    description: "Bộ định tuyến băng tần kép cho vùng phủ sóng Wi-Fi ổn định tại nhà và văn phòng nhỏ.",
     rating: 4.4,
     reviews: 15,
     price: 129.0,

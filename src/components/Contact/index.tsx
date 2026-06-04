@@ -4,7 +4,7 @@ import Breadcrumb from "../Common/Breadcrumb";
 const Contact = () => {
   return (
     <>
-      <Breadcrumb title={"Contact"} pages={["contact"]} />
+      <Breadcrumb title={"Liên hệ"} pages={["contact"]} />
 
       <section className="overflow-hidden py-20 bg-gray-2">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -98,7 +98,7 @@ const Contact = () => {
                       type="text"
                       name="firstName"
                       id="firstName"
-                      placeholder="Jhon"
+                      placeholder="Nhập tên"
                       className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     />
                   </div>
@@ -112,7 +112,7 @@ const Contact = () => {
                       type="text"
                       name="lastName"
                       id="lastName"
-                      placeholder="Deo"
+                      placeholder="Nhập họ"
                       className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     />
                   </div>
@@ -128,7 +128,7 @@ const Contact = () => {
                       type="text"
                       name="subject"
                       id="subject"
-                      placeholder="Type your subject"
+                      placeholder="Nhập chủ đề"
                       className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     />
                   </div>
@@ -142,7 +142,7 @@ const Contact = () => {
                       type="text"
                       name="phone"
                       id="phone"
-                      placeholder="Enter your phone"
+                      placeholder="Nhập số điện thoại"
                       className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     />
                   </div>
@@ -157,7 +157,7 @@ const Contact = () => {
                     name="message"
                     id="message"
                     rows={5}
-                    placeholder="Type your message"
+                    placeholder="Nhập tin nhắn của bạn"
                     className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                   ></textarea>
                 </div>

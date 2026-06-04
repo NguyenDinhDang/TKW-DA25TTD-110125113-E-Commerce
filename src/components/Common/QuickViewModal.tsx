@@ -293,9 +293,8 @@ const QuickViewModal = () => {
                 </div>
               </div>
 
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has.
+              <p className="text-body text-custom-sm mb-6">
+                {product?.description || "Mô tả sản phẩm đang được cập nhật."}
               </p>
 
               <div className="flex flex-wrap justify-between gap-5 mt-6 mb-7.5">

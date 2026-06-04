@@ -3,8 +3,8 @@ import Error from "@/components/Error";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Error Page | NextCommerce Nextjs E-commerce template",
-  description: "This is Error Page for NextCommerce Template",
+  title: "Lỗi | Không tìm thấy trang",
+  description: "Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã xảy ra lỗi.",
   // other metadata
 };
 

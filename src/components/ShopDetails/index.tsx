@@ -37,39 +37,39 @@ const ShopDetails = () => {
   const types = [
     {
       id: "active",
-      title: "Active",
+      title: "Hoạt động",
     },
 
     {
       id: "inactive",
-      title: "Inactive",
+      title: "Không hoạt động",
     },
   ];
 
   const sims = [
     {
       id: "dual",
-      title: "Dual",
+      title: "Sim kép",
     },
 
     {
       id: "e-sim",
-      title: "E Sim",
+      title: "eSim",
     },
   ];
 
   const tabs = [
     {
       id: "tabOne",
-      title: "Description",
+      title: "Mô tả",
     },
     {
       id: "tabTwo",
-      title: "Additional Information",
+      title: "Thông tin bổ sung",
     },
     {
       id: "tabThree",
-      title: "Reviews",
+      title: "Đánh giá",
     },
   ];
 
@@ -377,7 +377,7 @@ const ShopDetails = () => {
                       {/* <!-- details item --> */}
                       <div className="flex items-center gap-4">
                         <div className="min-w-[65px]">
-                          <h4 className="font-medium text-dark">Color:</h4>
+                          <h4 className="font-medium text-dark">Màu sắc:</h4>
                         </div>
 
                         <div className="flex items-center gap-2.5">
@@ -414,7 +414,7 @@ const ShopDetails = () => {
                       {/* <!-- details item --> */}
                       <div className="flex items-center gap-4">
                         <div className="min-w-[65px]">
-                          <h4 className="font-medium text-dark">Storage:</h4>
+                          <h4 className="font-medium text-dark">Dung lượng:</h4>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -481,7 +481,7 @@ const ShopDetails = () => {
                       {/* // <!-- details item --> */}
                       <div className="flex items-center gap-4">
                         <div className="min-w-[65px]">
-                          <h4 className="font-medium text-dark">Type:</h4>
+                          <h4 className="font-medium text-dark">Loại:</h4>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -670,7 +670,7 @@ const ShopDetails = () => {
                         href="#"
                         className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                       >
-                        Purchase Now
+                        Mua ngay
                       </a>
 
                       <a
@@ -728,7 +728,7 @@ const ShopDetails = () => {
                 >
                   <div className="max-w-[670px] w-full">
                     <h2 className="font-medium text-2xl text-dark mb-7">
-                      Specifications:
+                      Thông số kỹ thuật:
                     </h2>
 
                     <p className="mb-6">
@@ -752,7 +752,7 @@ const ShopDetails = () => {
 
                   <div className="max-w-[447px] w-full">
                     <h2 className="font-medium text-2xl text-dark mb-7">
-                      Care & Maintenance:
+                      Bảo quản & Bảo dưỡng:
                     </h2>
 
                     <p className="mb-6">
@@ -922,7 +922,7 @@ const ShopDetails = () => {
                 >
                   <div className="max-w-[570px] w-full">
                     <h2 className="font-medium text-2xl text-dark mb-9">
-                      03 Review for this product
+                      03 Đánh giá cho sản phẩm này
                     </h2>
 
                     <div className="flex flex-col gap-6">
@@ -1273,16 +1273,15 @@ const ShopDetails = () => {
                   <div className="max-w-[550px] w-full">
                     <form>
                       <h2 className="font-medium text-2xl text-dark mb-3.5">
-                        Add a Review
+                        Thêm đánh giá
                       </h2>
 
                       <p className="mb-6">
-                        Your email address will not be published. Required
-                        fields are marked *
+                        Địa chỉ email của bạn sẽ không được công khai. Các trường bắt buộc được đánh dấu *
                       </p>
 
                       <div className="flex items-center gap-3 mb-7.5">
-                        <span>Your Rating*</span>
+                        <span>Đánh giá của bạn*</span>
 
                         <div className="flex items-center gap-1">
                           <span className="cursor-pointer text-[#FBB040]">
@@ -1370,20 +1369,20 @@ const ShopDetails = () => {
                       <div className="rounded-xl bg-white shadow-1 p-4 sm:p-6">
                         <div className="mb-5">
                           <label htmlFor="comments" className="block mb-2.5">
-                            Comments
+                            Bình luận
                           </label>
 
                           <textarea
                             name="comments"
                             id="comments"
                             rows={5}
-                            placeholder="Your comments"
+                            placeholder="Nhập bình luận của bạn"
                             className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                           ></textarea>
 
                           <span className="flex items-center justify-between mt-2.5">
                             <span className="text-custom-sm text-dark-4">
-                              Maximum
+                              Tối đa
                             </span>
                             <span className="text-custom-sm text-dark-4">
                               0/250
@@ -1394,14 +1393,14 @@ const ShopDetails = () => {
                         <div className="flex flex-col lg:flex-row gap-5 sm:gap-7.5 mb-5.5">
                           <div>
                             <label htmlFor="name" className="block mb-2.5">
-                              Name
+                              Họ và tên
                             </label>
 
                             <input
                               type="text"
                               name="name"
                               id="name"
-                              placeholder="Your name"
+                              placeholder="Nhập họ và tên"
                               className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                             />
                           </div>
@@ -1415,7 +1414,7 @@ const ShopDetails = () => {
                               type="email"
                               name="email"
                               id="email"
-                              placeholder="Your email"
+                              placeholder="Nhập email"
                               className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                             />
                           </div>
@@ -1425,7 +1424,7 @@ const ShopDetails = () => {
                           type="submit"
                           className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
                         >
-                          Submit Reviews
+                          Gửi đánh giá
                         </button>
                       </div>
                     </form>

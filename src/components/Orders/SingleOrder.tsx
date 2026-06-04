@@ -44,7 +44,13 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
                   : "Unknown Status"
               }`}
             >
-              {orderItem.status}
+              {orderItem.status === "delivered"
+                  ? "Đã giao"
+                  : orderItem.status === "on-hold"
+                  ? "Tạm giữ"
+                  : orderItem.status === "processing"
+                  ? "Đang xử lý"
+                  : "Không rõ trạng thái"}
             </p>
           </div>
 
@@ -70,20 +76,20 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
           <div className="py-4.5 px-7.5">
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2"> Order:</span> #
+                <span className="font-bold pr-2"> Đơn hàng:</span> #
                 {orderItem.orderId.slice(-8)}
               </p>
             </div>
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Date:</span>{" "}
+                <span className="font-bold pr-2">Ngày:</span>{" "}
                 {orderItem.createdAt}
               </p>
             </div>
 
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Status:</span>{" "}
+                <span className="font-bold pr-2">Trạng thái:</span>{" "}
                 <span
                   className={`inline-block text-custom-sm  py-0.5 px-2.5 rounded-[30px] capitalize ${
                     orderItem.status === "delivered"
@@ -95,27 +101,33 @@ const SingleOrder = ({ orderItem, smallView }: any) => {
                       : "Unknown Status"
                   }`}
                 >
-                  {orderItem.status}
+                  {orderItem.status === "delivered"
+                    ? "Đã giao"
+                    : orderItem.status === "on-hold"
+                    ? "Tạm giữ"
+                    : orderItem.status === "processing"
+                    ? "Đang xử lý"
+                    : "Không rõ trạng thái"}
                 </span>
               </p>
             </div>
 
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Title:</span> {orderItem.title}
+                <span className="font-bold pr-2">Sản phẩm:</span> {orderItem.title}
               </p>
             </div>
 
             <div className="">
               <p className="text-custom-sm text-dark">
-                <span className="font-bold pr-2">Total:</span> $
+                <span className="font-bold pr-2">Tổng cộng:</span> $
                 {orderItem.total}
               </p>
             </div>
 
             <div className="">
               <p className="text-custom-sm text-dark flex items-center">
-                <span className="font-bold pr-2">Actions:</span>{" "}
+                <span className="font-bold pr-2">Thao tác:</span>{" "}
                 <OrderActions
                   toggleDetails={toggleDetails}
                   toggleEdit={toggleEdit}

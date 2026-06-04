@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CustomSelect from "./CustomSelect";
@@ -35,12 +35,12 @@ const Header = () => {
 
   const options = [
     { label: "Tất cả danh mục", value: "0" },
-    { label: "Desktop", value: "1" },
-    { label: "Laptop", value: "2" },
+    { label: "Máy tính bàn", value: "1" },
+    { label: "Máy tính xách tay", value: "2" },
     { label: "Điện thoại", value: "4" },
-    { label: "Watch", value: "5" },
-    { label: "Mouse", value: "6" },
-    { label: "Tablet", value: "7" },
+    { label: "Đồng hồ", value: "5" },
+    { label: "Chuột", value: "6" },
+    { label: "Máy tính bảng", value: "7" },
   ];
 
   return (
