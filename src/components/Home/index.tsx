@@ -70,13 +70,14 @@ const Home = () => {
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_330px]">
                 <div className="p-6 sm:p-10 flex flex-col justify-center">
                   <span className="text-custom-sm font-medium text-blue mb-3">
-                    Mùa vô học mới đã bắt đầu
+                    Đêm fix bug
+                    Sáng nộp bài
                   </span>
                   <h1 className="text-dark font-semibold text-3xl sm:text-4xl xl:text-heading-2 mb-4">
-                    Nguyên & Tân Store đang có ưu đãi lớn cho mùa tựu trường này!
+                    Đừng để chiếc laptop trở thành thành viên phản diện của dự án
                   </h1>
                   <p className="text-dark-4 max-w-[560px] mb-7">
-                    Từ máy tính xách tay đến phụ kiện, chúng tôi có mọi thứ bạn cần để bắt đầu năm học mới với phong cách và hiệu suất. Đừng bỏ lỡ cơ hội tiết kiệm lớn này!
+                    Laptop, PC và phụ kiện hiệu năng cao với mức giá dành cho sinh viên. CHỈ có tại Nguyen & Tan.
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-8">
