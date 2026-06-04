@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Inter } from "next/font/google";
-import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -12,9 +10,7 @@ import PreviewSliderModal from "@/components/Common/PreviewSlider";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
 
-const inter = Inter({ subsets: ["latin", "vietnamese"] });
-
-export default function RootLayout({
+export default function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -25,23 +21,17 @@ export default function RootLayout({
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
-  return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
-        {loading ? (
-          <PreLoader />
-        ) : (
-          <>
-            <Header />
-            {children}
-            <QuickViewModal />
-            <CartSidebarModal />
-            <PreviewSliderModal />
-            <ScrollToTop />
-            <Footer />
-          </>
-        )}
-      </body>
-    </html>
+  return loading ? (
+    <PreLoader />
+  ) : (
+    <>
+      <Header />
+      {children}
+      <QuickViewModal />
+      <CartSidebarModal />
+      <PreviewSliderModal />
+      <ScrollToTop />
+      <Footer />
+    </>
   );
 }
