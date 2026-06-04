@@ -33,32 +33,32 @@ const ShopWithSidebar = () => {
   const categories = [
     {
       name: "Desktop",
-      products: 10,
-      isRefined: true,
+      products: 1,
+      isRefined: false,
     },
     {
       name: "Laptop",
-      products: 12,
+      products: 2,
       isRefined: false,
     },
     {
       name: "Monitor",
-      products: 30,
+      products: 0,
       isRefined: false,
     },
     {
       name: "UPS",
-      products: 23,
+      products: 0,
       isRefined: false,
     },
     {
       name: "Phone",
-      products: 10,
+      products: 3,
       isRefined: false,
     },
     {
       name: "Watch",
-      products: 13,
+      products: 1,
       isRefined: false,
     },
   ];
@@ -181,7 +181,7 @@ const ShopWithSidebar = () => {
                     <CustomSelect options={options} />
 
                     <p>
-                      Đang hiển thị <span className="text-dark">{shopData.length} trong 50</span>{" "}
+                      Đang hiển thị <span className="text-dark">{shopData.length} trong {shopData.length}</span>{" "}
                       sản phẩm
                     </p>
                   </div>
