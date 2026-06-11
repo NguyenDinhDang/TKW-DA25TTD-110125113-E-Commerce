@@ -63,14 +63,14 @@ Người dùng có trải nghiệm mua sắm cơ bản như sau:
 
 ```mermaid
 flowchart LR
-  A[Người dùng] --> B[Trang chủ / Cửa hàng]
-  B --> C[Chi tiết sản phẩm]
-  C --> D[Xem nhanh]
-  C --> E[Giỏ hàng]
-  C --> F[Wishlist]
-  E --> G[Thanh toán]
+  A["Người dùng"] --> B["Trang chủ / Cửa hàng"]
+  B --> C["Chi tiết sản phẩm"]
+  C --> D["Xem nhanh"]
+  C --> E["Giỏ hàng"]
+  C --> F["Wishlist"]
+  E --> G["Thanh toán"]
   F --> E
-  G --> H[Kiểm tra đơn hàng (demo)]
+  G --> H["Kiểm tra đơn hàng (demo)"]
 ```
 
 ## Cấu trúc dự án
