@@ -1,284 +1,194 @@
-# Free eCommerce Template for Next.js - NextMerce (Static Frontend Edition)
+# TechMart - Frontend Thương mại điện tử tĩnh
 
-100% Static Frontend with Zustand & localStorage - No Backend Required!
+![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.0-61dafb?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-3178c6?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-38bdf8?style=flat-square&logo=tailwind-css)
+![Zustand](https://img.shields.io/badge/Zustand-State%20Management-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-Free%20to%20use-success?style=flat-square)
 
-This is a customized version of NextMerce designed as a pure frontend eCommerce template with:
-- ✅ 100% Static Site (HTML/CSS/JS only)
-- ✅ No Backend or Database
-- ✅ Data persistence via Browser localStorage
-- ✅ State management with Zustand
-- ✅ Fake authentication for demo purposes
-- ✅ Shopping cart, wishlist, and quick view modal
+> TechMart là giao diện thương mại điện tử tĩnh, phát triển bằng Next.js, React, Tailwind CSS và Zustand.
+> Dự án không cần backend. Dữ liệu tạm thời được lưu trên máy khách qua `localStorage`.
 
-![NextMerce](https://github.com/user-attachments/assets/57155689-a756-4222-8af7-134e556acae2)
+## Giới thiệu
 
----
+TechMart là mẫu frontend thương mại điện tử chỉ dùng phía khách, phù hợp cho trình diễn giao diện, nguyên mẫu nhanh và triển khai tĩnh.
 
-## 🚀 Quick Start
+Người dùng có trải nghiệm mua sắm cơ bản như sau:
 
-### 1. Install Dependencies
-```bash
-npm install
+- Duyệt sản phẩm
+- Lọc và tìm kiếm sản phẩm
+- Xem nhanh chi tiết sản phẩm
+- Thêm sản phẩm vào giỏ hàng
+- Lưu sản phẩm yêu thích vào wishlist
+- Mô phỏng đăng nhập/đăng ký và hồ sơ người dùng
+- Giao diện thanh toán demo
+
+## Giáo viên hướng dẫn
+
+- **Môn: Thiết kế Web**
+- **Giáo viên hướng dẫn: Đoàn Phước Miền**
+- **Email: antonio86doan@gmail.com**
+
+## Vì sao chọn dự án này
+
+- Không cần cài đặt backend
+- Triển khai tĩnh nhanh chóng
+- Quản lý trạng thái client nhẹ nhàng bằng Zustand
+- Dễ mở rộng thành cửa hàng thực tế sau này
+
+## Các tính năng chính
+
+| Khu vực | Chức năng | Lưu trữ |
+|---|---|---|
+| Giỏ hàng | Thêm/xóa sản phẩm, cập nhật số lượng, tính tổng | `localStorage` |
+| Wishlist | Lưu sản phẩm yêu thích để xem lại | `localStorage` |
+| Xác thực | Mô phỏng đăng nhập/đăng ký/hồ sơ | `localStorage` |
+| Quick View | Xem nhanh sản phẩm trong modal | Trạng thái client |
+| Shop UI | Lưới sản phẩm, trang chi tiết, bộ lọc, tìm kiếm | Dữ liệu tĩnh |
+| Checkout | Giao diện thanh toán demo | Client side |
+
+## Công nghệ sử dụng
+
+- **Next.js 16.1.6** với App Router
+- **React 19.2.0**
+- **TypeScript 5.2.2**
+- **Tailwind CSS 3.3.3**
+- **Zustand** để quản lý trạng thái nhẹ
+- **Swiper** cho carousel/slider
+- **React Hot Toast** cho thông báo
+- **react-range-slider-input** cho lọc giá
+
+## Sơ đồ luồng
+
+```mermaid
+flowchart LR
+  A[Người dùng] --> B[Trang chủ / Cửa hàng]
+  B --> C[Chi tiết sản phẩm]
+  C --> D[Xem nhanh]
+  C --> E[Giỏ hàng]
+  C --> F[Wishlist]
+  E --> G[Thanh toán]
+  F --> E
+  G --> H[Kiểm tra đơn hàng (demo)]
 ```
 
-### 2. Run Development Server
+## Cấu trúc dự án
+
+```txt
+src/
+|-- app/                 # Các trang App Router của Next.js
+|-- components/          # Các thành phần giao diện và phần chức năng
+|   |-- Home/            # Các phần trên trang chủ
+|   |-- Shop/            # Thẻ sản phẩm và dữ liệu shop
+|   `-- Common/          # Thành phần dùng chung
+|-- store/               # Các store Zustand
+|-- types/               # Kiểu TypeScript
+`-- css/                 # Style toàn cục
+```
+
+## Các store chính
+
+- `cartStore`
+- `wishlistStore`
+- `authStore`
+- `quickViewStore`
+- `cartSidebarModalStore`
+
+## Các khóa Local Storage
+
+- `cart-storage`
+- `wishlist-storage`
+- `auth-storage`
+
+## Khởi động nhanh
+
 ```bash
+npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Mở `http://localhost:3000` trên trình duyệt.
 
-### 3. Build for Production
+## Xây dựng cho production
+
 ```bash
 npm run build
 npm run start
 ```
 
----
+## Các lệnh có sẵn
 
-## 📦 What's Inside
+- `npm run dev` - chạy server phát triển
+- `npm run build` - tạo bản build production
+- `npm run start` - chạy server production
+- `npm run lint` - chạy ESLint
 
-### Technology Stack
-- **Next.js 16.1.6** - React framework with App Router
-- **React 19.2.0** - UI library
-- **TypeScript 5.2.2** - Type safety
-- **Tailwind CSS 3.3.3** - Utility-first CSS
-- **Zustand** - Lightweight state management
-- **Swiper** - Touch slider carousel
-- **React Hot Toast** - Toast notifications
+## Ghi chú xuất tĩnh
 
-### Removed (No Backend/Database)
-- ❌ next-auth (use `authStore` instead)
-- ❌ Sanity CMS (add your own content)
-- ❌ nodemailer (no email backend)
-- ❌ Redux (replaced with Zustand)
+Dự án sử dụng cấu hình xuất tĩnh trong `next.config.js`:
 
----
-
-## 🗂️ Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # React components
-│   ├── Examples/       # Sample components using Zustand
-│   └── [other components]
-├── store/              # Zustand stores (state management)
-│   ├── cartStore.ts
-│   ├── authStore.ts
-│   ├── quickViewStore.ts
-│   └── wishlistStore.ts
-├── types/              # TypeScript type definitions
-└── css/                # Global styles
-```
-
----
-
-## 🎯 Key Features
-
-### 1. **Shopping Cart** (`useCartStore`)
-- Add/remove items
-- Update quantities
-- Calculate totals
-- Persists in localStorage
-
-### 2. **Authentication** (`useAuthStore`)
-- Fake login/signup (no validation needed)
-- User profile management
-- Persists in localStorage
-
-### 3. **Wishlist** (`useWishlistStore`)
-- Add/remove items
-- Check if item in wishlist
-- Persists in localStorage
-
-### 4. **Quick View Modal** (`useQuickViewStore`)
-- View product details in modal
-- Non-persistent (closes on refresh)
-
-### 5. **Cart Sidebar** (`useCartSidebarModal`)
-- Toggle cart sidebar
-- Show/hide on demand
-
----
-
-## 💾 Data Storage
-
-All data is stored in browser **localStorage**:
-- `cart-storage` - Shopping cart
-- `auth-storage` - User login
-- `wishlist-storage` - Wishlist items
-
-**Important**: 
-- ✅ Data persists when browser tab closes
-- ✅ Data persists when page refreshes
-- ❌ Data is lost when browser cache is cleared
-- ❌ Data is lost when changing devices
-- ❌ Data is lost in Incognito/Private mode
-
----
-
-## 🔧 Using Zustand Stores
-
-### Cart Example
-```typescript
-import { useCartStore } from '@/store';
-
-export function MyComponent() {
-  const { items, addItem, removeItem, getTotal } = useCartStore();
-  
-  return (
-    <div>
-      <button onClick={() => addItem(product)}>
-        Add to Cart
-      </button>
-      <p>Total: ${getTotal()}</p>
-    </div>
-  );
-}
-```
-
-### Auth Example
-```typescript
-import { useAuthStore } from '@/store';
-
-export function MyComponent() {
-  const { user, isLoggedIn, login, logout } = useAuthStore();
-  
-  return isLoggedIn ? (
-    <p>Welcome, {user?.name}!</p>
-  ) : (
-    <button onClick={() => login('email@test.com', 'pass')}>
-      Login
-    </button>
-  );
-}
-```
-
-See [ZUSTAND_MIGRATION_GUIDE.md](./ZUSTAND_MIGRATION_GUIDE.md) for complete documentation.
-
----
-
-## 🎨 Components
-
-Pre-built components include:
-- ✅ Product Grid & List
-- ✅ Product Details Page
-- ✅ Shopping Cart
-- ✅ Checkout Form
-- ✅ User Account/Profile
-- ✅ Wishlist
-- ✅ Blog & Blog Details
-- ✅ Search & Filters
-- ✅ Header with Navigation
-- ✅ Footer
-
----
-
-## 📝 Example Components
-
-Sample components using Zustand are available in `src/components/Examples/`:
-- `SampleProductCard.tsx` - Product card with cart integration
-- `SampleAuthForm.tsx` - Login/signup form
-
----
-
-## ⚙️ Configuration
-
-### Static Export
-The `next.config.js` includes:
-```javascript
+```js
 output: 'export'
 ```
 
-This converts Next.js to a 100% static site (no server-side rendering).
+Điều này có nghĩa là:
 
-### Limitations
-- ❌ No API routes (`/api/*`)
-- ❌ No server-side rendering
-- ❌ No dynamic routes with `[id]`
-- ❌ No real authentication
-- ❌ No real database
+- Không có API route
+- Không có server-side rendering
+- Không có xác thực backend thực sự
+- Không có kết nối cơ sở dữ liệu thật
 
----
+## Lưu ý quan trọng
 
-## 🚢 Deployment
+- Phù hợp với hosting tĩnh và demo giao diện
+- Dễ tùy chỉnh bằng sản phẩm của riêng bạn
+- Có thể chuyển đổi thành ứng dụng thương mại điện tử thực tế sau này
+- Trạng thái client sẽ mất khi xóa bộ nhớ trình duyệt
 
-The `npm run build` command creates a `out/` folder with static files.
+## Ví dụ sử dụng
 
-Deploy to any static hosting:
-- **Vercel** - `vercel deploy`
-- **Netlify** - Drag & drop `out/` folder
-- **GitHub Pages** - Push to `gh-pages` branch
-- **AWS S3 + CloudFront**
-- **Any web server** (Apache, Nginx)
+### Giỏ hàng
 
----
-
-## 📚 Migration from Redux
-
-If you have existing components using Redux, migrate to Zustand:
-
-**Before (Redux):**
-```typescript
-import { useSelector, useDispatch } from 'react-redux';
-const dispatch = useDispatch();
-const items = useSelector(state => state.cart.items);
-dispatch(addToCart(product));
-```
-
-**After (Zustand):**
-```typescript
+```ts
 import { useCartStore } from '@/store';
-const { items, addItem } = useCartStore();
-addItem(product);
+
+export function AddToCartButton({ product }) {
+  const { addItem } = useCartStore();
+
+  return <button onClick={() => addItem(product)}>Thêm vào giỏ</button>;
+}
 ```
 
----
+### Xác thực
 
-## 🤔 FAQ
+```ts
+import { useAuthStore } from '@/store';
 
-**Q: How do I add a real backend later?**  
-A: Remove `output: 'export'` from `next.config.js` and add your backend API routes.
+export function WelcomeBanner() {
+  const { user, isLoggedIn, login, logout } = useAuthStore();
 
-**Q: Can I use a real database?**  
-A: Yes, but you'll need to replace localStorage calls with API calls to your backend.
+  if (!isLoggedIn) {
+    return <button onClick={() => login('demo@email.com', 'password')}>Đăng nhập</button>;
+  }
 
-**Q: How do I implement real authentication?**  
-A: Replace `authStore` with calls to a real authentication service (Firebase, Auth0, etc).
+  return <p>Chào mừng, {user?.name}</p>;
+}
+```
 
-**Q: Can I host static files on GitHub Pages?**  
-A: Yes! See [Deployment](#-deployment) section.
+## Tài liệu tham khảo
 
----
+- [Hướng dẫn chuyển đổi Zustand](./ZUSTAND_MIGRATION_GUIDE.md)
+- [Tổng quan dự án](./PROJECT_OVERVIEW.md)
+- [Next.js Docs](https://nextjs.org/docs)
+- [Zustand Docs](https://github.com/pmndrs/zustand)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
-## 📖 Documentation
 
-- [Zustand Store Guide](./ZUSTAND_MIGRATION_GUIDE.md) - Complete store documentation
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Zustand Documentation](https://github.com/pmndrs/zustand)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+## Giấy phép
 
----
-
-## 📄 License
-
-Free to use and modify for personal and commercial projects.
+Dự án được phép sử dụng và chỉnh sửa cho mục đích cá nhân hoặc thương mại.
 
 ---
 
-## 🎯 Next Steps
-
-1. Install dependencies: `npm install`
-2. Start dev server: `npm run dev`
-3. Explore example components in `src/components/Examples/`
-4. Review [ZUSTAND_MIGRATION_GUIDE.md](./ZUSTAND_MIGRATION_GUIDE.md)
-5. Update existing components to use Zustand stores
-6. Add your product data
-7. Deploy to static hosting
-
----
-
-**Version**: 0.1.2-static (May 2026)  
-**Base**: NextMerce Free  
-**Frontend Only**: ✅ Complete
+Dự án xây dựng để demo giao diện sạch, phát triển nhanh và triển khai tĩnh.
