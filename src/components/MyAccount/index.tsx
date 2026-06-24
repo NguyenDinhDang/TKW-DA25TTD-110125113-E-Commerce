@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import AddressModal from "./AddressModal";
-import Orders from "../Orders";
+import Orders from "../Home/Orders";
 
 const MyAccount = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
