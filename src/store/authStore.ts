@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
+import { v4 as uuidv4 } from 'uuid';
 export interface User {
   id: string;
   email: string;
@@ -29,11 +29,10 @@ export const useAuthStore = create<AuthState>()(
       isLoggedIn: false,
       
       login: (email: string, password: string) => {
-        // Fake login - no actual validation
         if (email && password) {
           set({
             user: {
-              id: Math.random().toString(36).substr(2, 9),
+              id: uuidv4(),
               email,
               name: email.split('@')[0],
             },
@@ -43,11 +42,10 @@ export const useAuthStore = create<AuthState>()(
       },
       
       signup: (email: string, password: string, name: string) => {
-        // Fake signup - no actual validation
         if (email && password && name) {
           set({
             user: {
-              id: Math.random().toString(36).substr(2, 9),
+              id: uuidv4(),
               email,
               name,
             },
