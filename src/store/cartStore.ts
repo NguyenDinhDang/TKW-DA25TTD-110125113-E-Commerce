@@ -23,7 +23,7 @@ interface CartState {
 
 export const useCartStore = create<CartState>()(
   persist(
-    (set, get) => ({
+    (set, get) => ({ //set ghi đè, get đọc dữ liệu
       items: [],
       
       addItem: (item: CartItem) => {
@@ -40,6 +40,7 @@ export const useCartStore = create<CartState>()(
                   : i
               ),
             };
+            //Anh bạn biết anh bạn đang định sữa điều gì không! Nếu nó hoạt động hãy để nó yên
           }
           
           return { items: [...state.items, item] };
@@ -65,11 +66,22 @@ export const useCartStore = create<CartState>()(
       },
       
       getTotal: () => {
-        return get().items.reduce((total, item) => total + item.price * item.quantity, 0);
+        let total = 0; 
+        const items = get().items;
+        for (let i = 0; i < items.length; i++) {
+          let item = items[i]; 
+          total += (item.price * item.quantity); 
+        }
+        return total;
       },
       
       getItemCount: () => {
-        return get().items.reduce((count, item) => count + item.quantity, 0);
+        const items = get().items;
+        let count = 0;
+        for (let i = 0; i < items.length; i++) {
+          count += items[i].quantity;
+        }
+        return count;
       },
     }),
     {

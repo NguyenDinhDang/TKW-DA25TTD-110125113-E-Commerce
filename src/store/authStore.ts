@@ -19,11 +19,12 @@ interface AuthState {
   login: (email: string, password: string) => void;
   signup: (email: string, password: string, name: string) => void;
   logout: () => void;
-  updateProfile: (userData: Partial<User>) => void;
+  updateProfile: (userData: Partial<User>) => void; // Biến tất cả các thuộc tính của User thành optional để có thể cập nhật từng phần
 }
 
 export const useAuthStore = create<AuthState>()(
-  persist(
+  //persist middleware to persist the auth state in localStorage
+  persist(  
     (set) => ({
       user: null,
       isLoggedIn: false,
@@ -63,12 +64,12 @@ export const useAuthStore = create<AuthState>()(
       
       updateProfile: (userData: Partial<User>) => {
         set((state) => ({
-          user: state.user ? { ...state.user, ...userData } : null,
+          user: state.user ? { ...state.user, ...userData } : null, // tạo object mới với dữ liệu cập nhật nếu user tồn tại, nếu không thì giữ nguyên null
         }));
       },
     }),
     {
-      name: 'auth-storage',
+      name: 'auth-storage', //key for localStorage
     }
   )
 );
