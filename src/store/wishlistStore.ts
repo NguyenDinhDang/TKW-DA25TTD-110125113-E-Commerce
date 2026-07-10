@@ -24,7 +24,7 @@ export const useWishlistStore = create<WishlistState>()(
       items: [],
       
       addItem: (item: WishlistItem) => {
-        set((state) => {
+        set((state) => { //state dùng để lưu trữ dữ liệu
           const exists = state.items.find((i) => i.id === item.id);
           if (exists) return state;
           return { items: [...state.items, item] };
@@ -33,16 +33,23 @@ export const useWishlistStore = create<WishlistState>()(
       
       removeItem: (id: string) => {
         set((state) => ({
-          items: state.items.filter((item) => item.id !== id),
+          items: state.items.filter((item) => item.id !== id), //Tạo mảng mới mà không có phần tử có id trùng với id được truyền vào
         }));
       },
       
-      isInWishlist: (id: string) => {
-        return get().items.some((item) => item.id === id);
+      isInWishlist: (id: string) => { // Tính năng bật tắt yêu thích, kiểm tra xem sản phẩm có trong danh sách yêu thích hay không
+        const currentItems = get().items; 
+        for (const item of currentItems) {
+          if (item.id === id) {
+            return true;
+          }
+        }
+        return false;
       },
       
       getItemCount: () => {
-        return get().items.length;
+        const currentItems = get().items; 
+        return currentItems.length;
       },
       
       clearWishlist: () => {
@@ -50,7 +57,7 @@ export const useWishlistStore = create<WishlistState>()(
       },
     }),
     {
-      name: 'wishlist-storage',
+      name: 'wishlist-storage', // Tên của key trong localStorage để lưu trữ dữ liệu
     }
   )
 );
