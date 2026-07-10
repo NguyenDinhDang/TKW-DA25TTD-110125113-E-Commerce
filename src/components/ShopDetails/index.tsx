@@ -3,7 +3,6 @@ import React, { use, useEffect, useState } from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
-import RecentlyViewdItems from "./RecentlyViewd";
 import { usePreviewSliderStore, useQuickViewStore } from "@/store";
 import { formatVND } from "@/utils/currency";
 
@@ -1435,9 +1434,6 @@ const ShopDetails = () => {
               {/* <!--== tab content end ==--> */}
             </div>
           </section>
-
-          <RecentlyViewdItems />
-
           <Newsletter />
         </>
       )}
