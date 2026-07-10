@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useAuthModalStore } from '@/store/authModalStore';
 import Signin from './Signin';
 import Signup from './Signup';
+import CloseIcon from '@mui/icons-material/Close';
 
 const AuthModal = () => {
   const { isOpen, view, closeModal } = useAuthModalStore();
@@ -32,9 +33,7 @@ const AuthModal = () => {
           onClick={closeModal}
           className="absolute top-3 right-3 text-gray-500 hover:text-dark duration-200"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <CloseIcon />
         </button>
         {view === 'signin' ? <Signin /> : <Signup />}
       </div>

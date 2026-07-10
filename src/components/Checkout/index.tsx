@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Breadcrumb from "../Common/Breadcrumb";
-import Login from "./Login";
 import Shipping from "./Shipping";
 import ShippingMethod from "./ShippingMethod";
 import PaymentMethod from "./PaymentMethod";
@@ -18,8 +17,6 @@ const Checkout = () => {
             <div className="flex flex-col lg:flex-row gap-7.5 xl:gap-11">
               {/* <!-- checkout left --> */}
               <div className="lg:max-w-[670px] w-full">
-                {/* <!-- login box --> */}
-                <Login />
 
                 {/* <!-- billing details --> */}
                 <Billing />
@@ -68,7 +65,7 @@ const Checkout = () => {
                       </div>
                     </div>
 
-                    {/* <!-- product item --> */}
+                    {/* <!-- product item --> */} // to do change hardcoded data to dynamic data
                     <div className="flex items-center justify-between py-5 border-b border-gray-3">
                       <div>
                         <p className="text-dark">iPhone 14 Plus , 6/128GB</p>

@@ -45,18 +45,6 @@ export const menuData: Menu[] = [
       },
       {
         id: 67,
-        title: "Đăng nhập",
-        newTab: false,
-        path: "/signin",
-      },
-      {
-        id: 68,
-        title: "Đăng ký",
-        newTab: false,
-        path: "/signup",
-      },
-      {
-        id: 69,
         title: "Tài khoản của tôi",
         newTab: false,
         path: "/my-account",
