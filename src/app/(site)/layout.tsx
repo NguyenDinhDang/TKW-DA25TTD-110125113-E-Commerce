@@ -9,6 +9,7 @@ import PreviewSliderModal from "@/components/Common/PreviewSlider";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
+import AuthModal from "@/components/Auth/AuthModal";
 
 export default function SiteLayout({
   children,
@@ -32,6 +33,7 @@ export default function SiteLayout({
       <PreviewSliderModal />
       <ScrollToTop />
       <Footer />
+      <AuthModal />
     </>
   );
 }

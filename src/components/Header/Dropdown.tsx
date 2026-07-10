@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useAuthModalStore } from "@/store/authModalStore";
 
 const Dropdown = ({ menuItem, stickyMenu }) => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const pathUrl = usePathname();
+  const { openModal: openAuthModal } = useAuthModalStore();
 
   return (
     <li
@@ -47,14 +49,28 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
       >
         {menuItem.submenu.map((item, i) => (
           <li key={i}>
-            <Link
-              href={item.path}
-              className={`flex text-custom-sm hover:text-blue hover:bg-gray-1 py-[7px] px-4.5 ${
-                pathUrl === item.path && "text-blue bg-gray-1"
-              } `}
-            >
-              {item.title}
-            </Link>
+            {item.path === '/signin' || item.path === '/signup' ? (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openAuthModal(item.path === '/signin' ? 'signin' : 'signup');
+                }}
+                className={`flex w-full text-left text-custom-sm hover:text-blue hover:bg-gray-1 py-[7px] px-4.5 ${
+                  pathUrl === item.path && "text-blue bg-gray-1"
+                } `}
+              >
+                {item.title}
+              </button>
+            ) : (
+              <Link
+                href={item.path}
+                className={`flex text-custom-sm hover:text-blue hover:bg-gray-1 py-[7px] px-4.5 ${
+                  pathUrl === item.path && "text-blue bg-gray-1"
+                } `}
+              >
+                {item.title}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
