@@ -53,17 +53,17 @@ const Header = () => {
         {/* <!-- header top start --> */}
         <div
           className={`flex flex-col lg:flex-row gap-5 items-end lg:items-center xl:justify-between ease-out duration-200 ${
-            stickyMenu ? "py-4" : "py-6"
+            stickyMenu ? "py-2" : "py-3"
           }`}
         >
           {/* <!-- header top left --> */}
           <div className="xl:w-auto flex-col sm:flex-row w-full flex sm:justify-between sm:items-center gap-5 sm:gap-10">
             <Link className="flex-shrink-0" href="/">
               <Image
-                src="/images/logo/logo.svg"
+                src="/images/logo/logo.png"
                 alt="Logo"
-                width={219}
-                height={36}
+                width={170}
+                height={32}
               />
             </Link>
 
@@ -81,7 +81,7 @@ const Header = () => {
                       type="search"
                       name="search"
                       id="search"
-                      placeholder="Bạn muốn tìm gì?"
+                      placeholder="Bạn cần gì?"
                       autoComplete="off"
                       className="custom-search w-full rounded-r-[5px] bg-gray-1 !border-l-0 border border-gray-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200"
                     />

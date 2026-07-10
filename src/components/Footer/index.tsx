@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-wrap xl:flex-nowrap gap-10 xl:gap-19 xl:justify-between pt-17.5 xl:pt-22.5 pb-10 xl:pb-15">
           <div className="max-w-[330px] w-full">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Help & Support
+              Hỗ trợ dịch vụ
             </h2>
 
             <ul className="flex flex-col gap-3">
@@ -198,33 +198,33 @@ const Footer = () => {
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Account
+              Tài khoản
             </h2>
 
             <ul className="flex flex-col gap-3.5">
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  My Account
+                  Tài khoản của tôi
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Login / Register
+                  Đăng nhập/ Đăng ký
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Cart
+                  Giỏ hàng
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Wishlist
+                  Danh sách yêu thích
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Shop
+                  Cửa hàng
                 </a>
               </li>
             </ul>
@@ -232,33 +232,33 @@ const Footer = () => {
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Quick Link
+              Chính sách
             </h2>
 
             <ul className="flex flex-col gap-3">
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Privacy Policy
+                  Chính sách bảo mật
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Refund Policy
+                  Chính sách hoàn tiền
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Terms of Use
+                  Điều khoản dịch vụ
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  FAQ’s
+                  Phản hồi
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Contact
+                  Liên hệ
                 </a>
               </li>
             </ul>
@@ -266,7 +266,7 @@ const Footer = () => {
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark lg:text-right">
-              Download App
+              Tải ứng dụng
             </h2>
 
             <p className="lg:text-right text-custom-sm mb-4">
@@ -295,7 +295,7 @@ const Footer = () => {
 
                   <div>
                     <span className="block text-custom-xs">
-                      Download on the
+                      Tải tại
                     </span>
                     <p className="font-medium">App Store</p>
                   </div>
@@ -322,7 +322,7 @@ const Footer = () => {
                   </svg>
 
                   <div>
-                    <span className="block text-custom-xs"> lấy ngay</span>
+                    <span className="block text-custom-xs"> Tải tại</span>
                     <p className="font-medium">Google Play</p>
                   </div>
                 </a>
@@ -342,8 +342,8 @@ const Footer = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <p className="font-medium">We Accept:</p>
-
+              <p className="font-medium">Có thể thanh toán bằng:</p>
+              {/* Phần thanh toán */}
               <div className="flex flex-wrap items-center gap-6">
                 <a href="#" aria-label="payment system with visa card">
                   <Image
