@@ -20,7 +20,7 @@ export const menuData: Menu[] = [
     path: "/contact",
   },
   {
-    id: 6,
+    id: 4,
     title: "Tài khoản",
     newTab: false,
     path: "/",
@@ -51,4 +51,10 @@ export const menuData: Menu[] = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Lịch giao hàng",
+    newTab: false,
+    path: "/delivery-schedule",
+  }
 ];

@@ -1,23 +1,23 @@
 const ordersData = [
   {
-    orderId: "234c56",
+    orderId: "1",
     createdAt: "18th May, 2022",
     status: "delivered",
-    total: "$100",
+    total: "2,300,000",
     title: "Sunglasses",
   },
   {
-    orderId: "234c56",
+    orderId: "2",
     createdAt: "18th May, 2022",
     status: "processing",
-    total: "$100",
+    total: "1,000,000",
     title: "Watchs",
   },
   {
-    orderId: "234c56",
+    orderId: "3",
     createdAt: "18th May, 2022",
     status: "delivered",
-    total: "$100",
+    total: "100,000",
     title: "Cancelled",
   }
 ];

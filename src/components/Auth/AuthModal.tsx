@@ -9,7 +9,8 @@ import CloseIcon from '@mui/icons-material/Close';
 const AuthModal = () => {
   const { isOpen, view, closeModal } = useAuthModalStore();
 
-  useEffect(() => {
+  // Khoá việc cuộn trang khi modal mở và mở lại khi modal đóng
+  useEffect(() => { 
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {

@@ -5,8 +5,6 @@ import data from "./categoryData";
 import Image from "next/image";
 
 // Import Swiper styles
-import "swiper/css/navigation";
-import "swiper/css";
 import SingleItem from "./SingleItem";
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
