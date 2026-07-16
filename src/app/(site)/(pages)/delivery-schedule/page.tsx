@@ -15,7 +15,7 @@ const DeliverySchedulePage = () => {
         <Breadcrumb title={"Lịch giao hàng"} pages={["Lịch giao hàng"]} />
       </section>
       
-      <section className="py-20 bg-gray-2">
+      <section className="pt-6 pb-20 bg-gray-2">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <OrderCalendar />
         </div>

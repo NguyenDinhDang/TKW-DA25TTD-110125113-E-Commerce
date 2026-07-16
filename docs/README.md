@@ -12,7 +12,8 @@ Bộ tài liệu này được viết để bàn giao kỹ thuật và báo cáo
 6. [Bao cao ky thuat](./06-bao-cao-ky-thuat.md)
 7. [So do Mermaid](./07-so-do-mermaid.md)
 8. [Cong nghe can hoc de thuyet trinh](./08-cong-nghe-can-hoc-de-thuyet-trinh.md)
-8. [Cac ham xu ly nghiep vu](./09-tong-quan-cac-ham-xu-ly-nghiep-vu.md)
+9. [Cac ham xu ly nghiep vu](./09-tong-quan-cac-ham-xu-ly-nghiep-vu.md)
+10. [Thu muc du an](./10-thu-muc-du-an.md)
 
 
 ## Ghi chu
@@ -20,3 +21,4 @@ Bộ tài liệu này được viết để bàn giao kỹ thuật và báo cáo
 - Du an hien tai la frontend tich hop static export.
 - Du lieu san pham va nhieu trang chuc nang dang mo phong bang data local va browser storage.
 - Cac file cua Redux van con trong source, nhung layer Zustand la luong dang dung thuc te.
+- Trang Lịch giao hàng (/delivery-schedule) đã được thêm, dùng MUI X Date Pickers và chỉ lưu state tạm thời (chưa persist).

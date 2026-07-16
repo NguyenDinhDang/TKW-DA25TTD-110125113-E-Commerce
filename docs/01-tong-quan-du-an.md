@@ -15,6 +15,8 @@ Hệ thống mô phỏng một website bán hàng đầy đủ luồng cơ bản
 - Thêm sản phẩm vào giỏ hàng.
 - Lưu sản phẩm yêu thích vào wishlist.
 - Thao tác với form checkout, thông tin tài khoản, đăng nhập và đăng ký demo.
+- Đặt lịch giao hàng theo ngày mong muốn qua giao diện lịch tương tác.
+
 
 ## 3. Phạm vi bàn giao
 
@@ -64,3 +66,6 @@ Người dùng đi qua các khối:
 
 Màn `My Account` chia thành nhiều tab để mô phỏng dashboard, orders, downloads, addresses và account details.
 
+### 5.5. Đặt lịch giao hàng
+
+Người dùng vào trang Lịch giao hàng, chọn ngày muốn nhận hàng trên lịch tương tác, nhập ghi chú đơn hàng và bấm đặt lịch. Danh sách các lịch đã đặt hiển thị ngay bên dưới.

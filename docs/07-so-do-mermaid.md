@@ -15,6 +15,7 @@ flowchart TD
   H --> I[My Account]
   C --> J[Wishlist]
   E --> J
+  A --> K[Lịch giao hàng]
 ```
 
 ## 2. Kiến trúc người dùng -> hệ thống
@@ -115,5 +116,18 @@ stateDiagram-v2
   Description --> AdditionalInformation
   AdditionalInformation --> Reviews
   Reviews --> Description
+```
+
+## 10. Luồng lịch giao hàng
+
+```mermaid
+flowchart TD
+  A[Người dùng vào /delivery-schedule] --> B[OrderCalendar Component]
+  B --> C[Chọn ngày trên DateCalendar]
+  B --> D[Nhập ghi chú đơn hàng]
+  C --> E[Bấm nút Đặt lịch]
+  D --> E
+  E --> F[Lưu vào local state orders]
+  F --> G[Hiển thị danh sách lịch đã đặt]
 ```
 

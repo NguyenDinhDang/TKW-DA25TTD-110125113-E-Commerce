@@ -194,3 +194,36 @@ File chính:
 - Xóa item.
 - Giữ trạng thái qua refresh nhờ persist store.
 
+## 9. Lịch giao hàng
+
+File chính:
+
+- `src/components/Calender/orderCalender.tsx`
+- `src/app/(site)/(pages)/delivery-schedule/page.tsx`
+
+### Tính năng
+
+- Chọn ngày giao hàng qua giao diện calendar tương tác.
+- Không thể chọn ngày trong quá khứ (disablePast).
+- Nhập ghi chú/nội dung đơn hàng.
+- Bấm nút đặt lịch để thêm vào danh sách lịch đã đặt.
+- Danh sách lịch đã đặt hiển thị ngay bên dưới form.
+
+### Thư viện dùng
+
+- `@mui/x-date-pickers/DateCalendar` cho calendar UI.
+- `@mui/x-date-pickers/LocalizationProvider` + `AdapterDayjs` cho format ngày.
+- `dayjs` để xử lý ngày tháng.
+- MUI Material UI cho Card, Button, TextField, Typography.
+
+### Trạng thái UI (local state)
+
+- `selectedDate`: ngày đang được chọn (mặc định là hôm nay).
+- `note`: nội dung ghi chú đơn hàng.
+- `orders`: danh sách các lịch đã đặt (lưu tạm trong state, chưa persist).
+
+### Lưu ý
+
+- Component có `'use client'` directive vì dùng useState và MUI.
+- Dữ liệu đặt lịch hiện chỉ lưu trong local state, chưa có persistence qua localStorage hay API.
+

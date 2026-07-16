@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import React, { useState } from "react";
-// DateCalendar là component lịch có sẵn của MUI X Date Pickers
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -8,17 +7,12 @@ import { Box, Card, CardContent, Typography, Button, TextField, Stack, } from "@
 import dayjs from "dayjs";
 
 export default function OrderCalendar() {
-  // Ngày đang được chọn để đặt hàng
   const [selectedDate, setSelectedDate] = useState(dayjs());
-  // Ghi chú/nội dung đơn hàng
   const [note, setNote] = useState("");
-  // Danh sách các đơn đã đặt (chỉ lưu tạm trong state)
   const [orders, setOrders] = useState([]);
 
   // Xử lý khi bấm nút "Đặt lịch"
   const handleBooking = () => {
-    if (!note.trim()) return; // không cho đặt nếu chưa nhập ghi chú
-
     const newOrder = {
       date: selectedDate.format("DD/MM/YYYY"),
       note: note.trim(),
@@ -30,7 +24,7 @@ export default function OrderCalendar() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Box sx={{ maxWidth: 420, mx: "auto", p: 2 }}>
+      <Box sx={{ maxWidth: 420, mx: "auto", p: 0, mt: 0 }}>
         <Card variant="outlined">
           <CardContent>
             <Typography variant="h6" gutterBottom>

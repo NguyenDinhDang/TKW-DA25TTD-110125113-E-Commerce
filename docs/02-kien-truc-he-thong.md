@@ -9,6 +9,8 @@
 - Zustand để quản lý state client-side.
 - Swiper cho carousel/slider.
 - React Hot Toast cho thông báo.
+- MUI (@mui/material) cho các UI component nâng cao.
+- MUI X Date Pickers (@mui/x-date-pickers) cho calendar UI.
 
 ## 2. Cấu trúc thư mục chính
 
@@ -27,6 +29,7 @@ Chứa routing theo App Router.
 - `src/app/(site)/(pages)/signin/page.tsx`: đăng nhập.
 - `src/app/(site)/(pages)/signup/page.tsx`: đăng ký.
 - `src/app/(site)/(pages)/wishlist/page.tsx`: wishlist.
+- `src/app/(site)/(pages)/delivery-schedule/page.tsx`: lịch giao hàng.
 
 ### `src/components`
 
@@ -41,6 +44,7 @@ Chứa các khối UI và page-level components.
 - `MyAccount`: dashboard tài khoản và tabs.
 - `Auth`: form đăng nhập/đăng ký.
 - `Blog`, `Orders`, `Contact`, `Error`, `MailSuccess`: các màn phụ trợ.
+- `Calender`: component lịch tương tác đặt lịch giao hàng (dùng MUI X Date Pickers).
 
 ### `src/store`
 
