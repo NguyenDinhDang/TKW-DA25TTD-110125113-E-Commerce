@@ -76,7 +76,7 @@ export default function OrderCalendar() {
                       borderRadius: 1,
                     }}
                   >
-                    <Typography variant="body2" fontWeight={500}>
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>
                       {order.date}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
