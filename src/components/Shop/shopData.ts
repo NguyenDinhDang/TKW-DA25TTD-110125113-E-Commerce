@@ -161,26 +161,26 @@ const shopData: Product[] = [
       ],
     },
   },
-  {
-    title: "Xiaomi 17T pro",
-    category: "Phones",
-    description: "Siêu phẩm flagship tương lai với cấu hình đột phá, dẫn đầu xu hướng công nghệ và hiệu năng đỉnh cao. Hệ thống camera đỉnh cấp cùng công nghệ sạc siêu tốc, mang lại trải nghiệm mượt mà không giới hạn.",
-    rating: 4.8,
-    reviews: 12,
-    price: 799.0,
-    discountedPrice: 699.0,
-    id: 9,
-    imgs: {
-      thumbnails: [
-        "/images/products/image1.jpeg",
-        "/images/products/image1.jpeg",
-      ],
-      previews: [
-        "/images/products/image1.jpeg",
-        "/images/products/image1.jpeg",
-      ],
-    },
-  },
+  // {
+  //   title: "Xiaomi 17T pro",
+  //   category: "Phones",
+  //   description: "Siêu phẩm flagship tương lai với cấu hình đột phá, dẫn đầu xu hướng công nghệ và hiệu năng đỉnh cao. Hệ thống camera đỉnh cấp cùng công nghệ sạc siêu tốc, mang lại trải nghiệm mượt mà không giới hạn.",
+  //   rating: 4.8,
+  //   reviews: 12,
+  //   price: 799.0,
+  //   discountedPrice: 699.0,
+  //   id: 9,
+  //   imgs: {
+  //     thumbnails: [
+  //       "/images/products/image1.jpeg",
+  //       "/images/products/image1.jpeg",
+  //     ],
+  //     previews: [
+  //       "/images/products/image1.jpeg",
+  //       "/images/products/image1.jpeg",
+  //     ],
+  //   },
+  // },
   {
     title: "Iphone 17 Promax",
     category: "Phones",

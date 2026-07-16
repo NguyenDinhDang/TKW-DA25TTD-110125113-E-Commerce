@@ -4,6 +4,7 @@ import Image from "next/image";
 import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import Newsletter from "../Common/Newsletter";
+import { formatVND } from "@/utils/currency";
 
 const categories = [
   { name: "Điện thoại", count: 18 },
@@ -24,12 +25,14 @@ const quickStats = [
 
 const Home = () => {
   const featuredProducts = shopData.slice(0, 6);
+  // 2 sản phẩm bán chạy để hiển thị trong aside
+  const bestsellerProducts = shopData.slice(6, 8);
 
   return (
     <main className="bg-[#f3f4f6] pt-46 sm:pt-42 lg:pt-34 xl:pt-46">
       <section className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-10">
-        <div className="grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-7.5">
-          <aside className="bg-white rounded-lg shadow-1 p-5 h-fit">
+        <div className="grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-x-7.5 gap-y-10 items-start">
+          <aside className="bg-white rounded-lg shadow-1 p-5 h-fit xl:col-start-1 xl:row-start-1">
             <div className="flex items-center justify-between mb-5">
               <h2 className="font-semibold text-lg text-dark">Mua hàng theo phân loại</h2>
               <Link href="/shop-with-sidebar" className="text-custom-sm text-blue">
@@ -51,22 +54,32 @@ const Home = () => {
               ))}
             </ul>
 
-            <div className="mt-6 rounded-lg bg-gray-1 p-4">
-              <p className="font-medium text-dark mb-3">Hàng ngon vừa cập bến hôm nay</p>
-              <p className="text-custom-sm text-dark-4 mb-4">
-                Tiết kiệm 2% nếu mua hàng trong 24 giờ tới. Đừng bỏ lỡ!
-              </p>
-              <Link
-                href="/shop-with-sidebar"
-                className="inline-flex rounded-[5px] bg-blue px-4 py-2 text-custom-sm font-medium text-white hover:bg-blue-dark"
-              >
-                Mua liền đi
-              </Link>
+            {/* Banner khuyến mãi có ảnh */}
+            <div className="mt-5 rounded-lg overflow-hidden relative group">
+              <Image
+                src="/images/promo/promo-01.png"
+                alt="Ưu đãi đặc biệt"
+                width={270}
+                height={150}
+                className="w-full object-cover h-[130px] group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex flex-col justify-end p-3">
+                <p className="text-white font-semibold text-sm leading-tight mb-1">
+                  Ưu đãi hôm nay
+                </p>
+                <p className="text-white/80 text-xs mb-2">Giảm 2% nếu mua trong 24 giờ</p>
+                <Link
+                  href="/shop-with-sidebar"
+                  className="inline-flex self-start rounded-[4px] bg-blue px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-dark transition-colors"
+                >
+                  Mua ngay
+                </Link>
+              </div>
             </div>
+
           </aside>
 
-          <div className="flex flex-col gap-7.5">
-            <section className="bg-white rounded-lg shadow-1 overflow-hidden">
+          <section className="bg-white rounded-lg shadow-1 overflow-hidden h-fit xl:col-start-2 xl:row-start-1">
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_330px]">
                 <div className="p-6 sm:p-10 flex flex-col justify-center">
                   <span className="text-custom-sm font-medium text-blue mb-3">
@@ -119,7 +132,25 @@ const Home = () => {
               </div>
             </section>
 
-            <section>
+            <section className="h-fit xl:col-start-1 xl:row-start-2">
+              <div className="mb-6">
+                <span className="block text-custom-sm font-medium text-transparent select-none" aria-hidden="true">
+                  Khuyến mãi
+                </span>
+                <h2 className="font-semibold text-xl xl:text-heading-5 text-dark mt-1">
+                  Bán chạy hôm nay
+                </h2>
+              </div>
+
+              {/* Đạo hữu xin nhuộng tay, trận pháp này đang vận hành ổn định, chớ dại mà đụng vào kẻ o tẩu hỏa nhập ma */}
+              <div className="flex flex-col gap-9">
+                {bestsellerProducts.map((product) => (
+                  <SingleGridItem item={product} key={product.id} />
+                ))}
+              </div>
+            </section>
+
+            <section className="h-fit xl:col-start-2 xl:row-start-2">
               <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
                 <div>
                   <span className="text-custom-sm font-medium text-blue">
@@ -143,7 +174,6 @@ const Home = () => {
                 ))}
               </div>
             </section>
-          </div>
         </div>
       </section>
 
