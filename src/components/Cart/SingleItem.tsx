@@ -36,8 +36,8 @@ const SingleItem = ({ item }) => {
         <div className="flex items-center justify-between gap-5">
           <div className="w-full flex items-center gap-5.5">
             <div className="flex items-center justify-center rounded-[5px] bg-gray-2 max-w-[80px] w-full h-17.5 overflow-hidden">
-              {item.imgs?.thumbnails?.[0] ? (
-                <Image width={200} height={200} src={item.imgs.thumbnails[0]} alt="product" className="object-cover w-full h-full" />
+              {item.image ? (
+                <Image width={200} height={200} src={item.image} alt="product" className="object-cover w-full h-full" />
               ) : (
                 <div className="w-full h-full bg-gray-3"></div>
               )}
@@ -53,7 +53,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[180px]">
-        <p className="text-dark">{formatVND(item.discountedPrice)}</p>
+        <p className="text-dark">{formatVND(item.price)}</p>
       </div>
 
       <div className="min-w-[275px]">
@@ -81,7 +81,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[200px]">
-        <p className="text-dark">{formatVND(item.discountedPrice * quantity)}</p>
+        <p className="text-dark">{formatVND(item.price * quantity)}</p>
       </div>
 
       <div className="min-w-[50px] flex justify-end">
