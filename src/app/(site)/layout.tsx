@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
-
+import Chatbot from "@/components/Chatbot/Chatbot";
 import PreLoader from "@/components/Common/PreLoader";
 import AuthModal from "@/components/Auth/AuthModal";
 
@@ -32,6 +32,7 @@ export default function SiteLayout({
       <PreviewSliderModal />
       <Footer />
       <AuthModal />
+      <Chatbot />
     </>
   );
 }
